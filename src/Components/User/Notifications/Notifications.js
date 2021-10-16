@@ -116,16 +116,18 @@ function Notifications(isToggled, setIsToggled, notification, setCurrentSection,
                     current_notification_section === 2
                         ?
                         <>
-                            <h3>today</h3>
+                            <h3>Today</h3>
                             {all_notification?.filter(date => date.created_at.slice(0, 10) === `${year}-${month + 1}-${dateToday}`).map((value, index) =>
                                 <div><NotificationCard call_notification={call_notification} call_pinned={call_pinned} Trig={trig} setTrig={settrig} value={value} setCurrentSection={isToggled?.setCurrentSection} setTableSwitch={isToggled?.setTableSwitch} /></div>)}
+                            <hr style={{border:"1px solid white", color: "wheat" }} />
 
-                            <h3>previous</h3>
+                            <h3>Previous</h3>
                             {/* all_notification?.filter(date => date.created_at.slice(0, 10) < `${year}-${month + 1}-$dateToday}`) != [] ? */}
 
                             {all_notification?.filter(date => date.created_at.slice(0, 10) < `${year}-${month + 1}-${dateToday}`).map((value, index) =>
                                 <div><NotificationCard call_notification={call_notification} call_pinned={call_pinned} Trig={trig} setTrig={settrig} value={value} setCurrentSection={isToggled?.setCurrentSection} setTableSwitch={isToggled?.setTableSwitch} /></div>)}
 
+<hr style={{border:"1px solid white", color: "wheat" }} />
 
                         </>
                         :
@@ -140,6 +142,7 @@ function Notifications(isToggled, setIsToggled, notification, setCurrentSection,
                                     />
                                 </div>)}
 
+                                <hr style={{border:"1px solid white", color: "wheat" }} />
 
                             <h3>Previous</h3>
                             {pinned_notifcation?.filter(date => date.created_at.slice(0, 10) < `${year}-${month + 1}-${dateToday}`).map((value, index) =>
@@ -148,6 +151,8 @@ function Notifications(isToggled, setIsToggled, notification, setCurrentSection,
                                         call_notification={call_notification} call_pinned={call_pinned} Trig={trig} setTrig={settrig} value={value} setCurrentSection={isToggled?.setCurrentSection} setTableSwitch={isToggled?.setTableSwitch}
                                     />
                                 </div>)}
+                                <hr style={{border:"1px solid white", color: "wheat" }} />
+
                         </>
                 }
             </div>
