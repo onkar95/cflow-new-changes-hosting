@@ -1,0 +1,395 @@
+.main-div {
+  background-color: #121417;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 3rem;
+}
+
+.info-div {
+  padding-left: 2rem;
+  width: 55%;
+  background-image: url('../../Images/bgs.png'), url("../../Images/bgb.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 225px 175px, 0px 218px;
+}
+
+.logo-img {
+width: 300px;
+margin-top: 80px;
+}
+
+.why-choose-us-login {
+  margin-left: 3.5%;
+  margin-top: 60px;
+}
+
+.why-choose-us-header {
+  font-size: 24px;
+  color: #FFB600;
+  font-weight: 600;
+}
+
+.why-choose-us-description-line1 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #8A8A8A;
+  line-height: 30px;
+}
+
+.why-choose-us-description-line2 {
+  margin-top: 25px;
+}
+
+.tick {
+  width: 12px;
+  margin-right: 10px;
+}
+
+.login-points-container {
+  width: max-content;
+  text-align: left;
+}
+
+.why-choose-us-points1 {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFB600;
+}
+
+.why-choose-us-points2 {
+  margin-top: 40px;
+}
+
+.follow-us {
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 80px;
+}
+
+.socials-instruction {
+  font-weight: 600;
+  color:#8A8A8A;
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 35px;
+}
+
+.socials-responsive {
+  height: 0px;
+  overflow-y: hidden;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.socials-link {
+  margin-right: 20px;
+}
+
+.login-copyright {
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
+
+
+.login-div {
+  width:30%;
+  height: 760px;
+  background-color: #191B1E;
+  margin-top: 90px;
+  margin-bottom: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 4px;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #FFB600;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.login-description {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #8A8A8A;
+  margin-top: 20px;
+}
+
+.textfield-description {
+  text-align: start;
+  margin-top: 30px;
+}
+
+.login-textfield {
+  background-color: #27292B;
+  border: 0px;
+  height: 70px;
+  width: 93%;
+  padding-left: 7%;
+  margin: auto;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+.login-button {
+  width:100%;
+  height: 70px;
+  background-color: #FFB600;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 0px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: all 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999s;
+}
+
+.eye {
+  width: 30px;
+  margin-left: 90%;
+}
+
+.login-bottom-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.google-icon {
+  margin-top: 25px;
+  border-radius: 100%;
+  background-color: #27292B;
+  height: 26px;
+}
+
+.mobile-button {
+  background-color: #27292B;
+  width: 48%;
+  height: 70px;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-span {
+  margin-left: 5%;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  width: max-content;
+}
+
+.mob-pic {
+  margin-top: 20px;
+  width: 20px;
+  height: 30px;
+}
+
+.login-bottom-description {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.login-bottom-underlined {
+  font-weight: 700;
+  color: #FFB600;
+  cursor: pointer;
+}
+
+.mailB {
+  width: 25px;
+  height: 20px;
+  margin-top: 25px;
+}
+
+.current-plan {
+  color: #8A8A8A;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.current-plan-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.current-plan-details1 {
+  margin-top: 70px;
+  display: flex;
+}
+
+.detail-price {
+  color: #FFB600;
+  font-weight: 600;
+  font-size: 24px;
+  width:30%;
+}
+
+.detail-number-of-items {
+  color: #FFB600;
+  width: 23%;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rest-of-the-details {
+  color: #8A8A8A;
+  width: 23%;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.plan-details {
+  width: max-content;
+  margin-right: 5%;
+}
+
+.forgot {
+  cursor:pointer;
+}
+
+
+
+
+
+@media screen and (max-width:1200px) {
+  .main-div {
+    display: block;
+    padding-right: 0px;
+    text-align: center;
+  }
+
+  .info-div {
+    width: 100%;
+    padding-left: 0px;
+  }
+
+  .why-choose-us-login {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+
+  .login-points-container {
+    margin: auto;
+  }
+
+  .links {
+    justify-content: center;
+  }
+
+  .current-plan-details {
+    justify-content: center;
+  }
+
+  .detail-price {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .detail-number-of-items {
+    width: 33.33%;
+  }
+  
+  .rest-of-the-details {
+    width: 33.33%;
+  }
+
+  .plan-details {
+    width: max-content;
+  }
+
+  .login-div {
+    padding-top: 0.1px;
+    margin: auto;
+    margin-top: 30px;
+    width: 60%
+  }
+
+  .logo-img {
+    margin-top: 10px;
+    width: 250px;
+  }
+
+  .socials-responsive {
+    height: max-content;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .follow-us {
+    margin-top: 0px;
+    width: 50%;
+  }
+
+  .socials-instruction {
+    margin-top: 0px;
+    width: 50%;
+  }
+
+  .login-copyright {
+    margin-top: 0px;
+  }
+
+  .socials-unresponsive {
+    height: 0px;
+    overflow-y: hidden;
+  }
+}
+
+@media screen and (max-width:700px) {
+  .login-div {
+    width: 70%;
+  }
+
+  .logo-img {
+    margin-top: 10px;
+    width: 200px;
+  }
+}
+
+
+@media screen and (max-width:600px) {
+  .login-div {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .login-div {
+    width: 100%;
+  }
+}

@@ -1,0 +1,366 @@
+.pcc-rcc-container {
+    margin-top: 1rem;
+    padding: 2rem;
+}
+
+.upper-div {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.left-div {
+    display: flex;
+    flex-flow: column nowrap;
+    width:65%;
+}
+
+.right-div {
+    padding: 2rem;
+    width: 27%;
+}
+
+.lower-div {
+    display: flex ;
+    flex-flow: row wrap ;
+    justify-content: space-around ;
+    margin-bottom: 2rem ;
+}
+
+.radio-container {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.category-select-txt {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px; 
+    color: #F5F5F5;
+}
+
+.radio-btn-wrapper {
+    margin-left: 5rem;
+}
+
+.length-breadth-height-form-wrapper {
+    margin-top: 5rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.total-area-form-div {
+    margin-top: 5rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.pcc-grades-div {
+    margin-top: 3rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.pcc-grades-div > div {
+    margin-top: 2rem;
+}
+
+.pcc-grades-header {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #F5F5F5;
+}
+
+.pcc-grades-txt {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+    color: #F5F5F5;
+}
+
+.btn-container {
+    margin-top: 3rem;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.recent-calc-div {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: #2D2D2D;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.recent-calc-div > div {
+    margin-top: 1vh;
+}
+
+.recent-calc-clear-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.recent-calc-clear {
+    margin-top: -1.5rem;
+}
+
+.recent-calc-header {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #F5F5F5;
+}
+
+.calc-results {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: rgba(245, 245, 245, 0.6);
+}
+
+.results-header {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #FFB600;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.quantity {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #F5F5F5;
+}
+
+.units {
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .left-div {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 60% !important;
+    }
+    
+    .right-div {
+        padding: 2rem;
+        width: 30% !important;
+    }
+
+    .recent-calc-div {
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: #2D2D2D;
+        width: 10rem;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .length-breadth-height-form-wrapper {
+        margin-top: 5rem;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .units {
+        margin-top: 3rem;
+        margin-left: 1rem;
+    }
+
+    .lower-div {
+        display: flex ;
+        flex-flow: column nowrap ;
+        justify-content: space-between ;
+        margin-bottom: 2rem ;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .left-div {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100% !important;
+    }
+    
+    .right-div {
+        width: 100% !important;
+    }
+
+    .upper-div {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .radio-container {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+    }
+
+    .length-breadth-height-form-wrapper {
+        margin-top: 5rem;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .units {
+        margin-top: 3rem !important;
+        margin-left: 1rem;
+    }
+
+    .lower-div {
+        display: flex ;
+        flex-direction: column !important;
+        margin-bottom: 2rem ;
+    }
+    
+}
+
+@media screen and (min-width: 425px) and (max-width: 767px) {
+    .left-div {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100% !important;
+    }
+    
+    .right-div {
+        width: 100% !important;
+    }
+
+    .category-select-txt {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px; 
+        color: #F5F5F5;
+        width: 40%;
+    }
+
+    .radio-container {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+    }
+
+    .upper-div {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .radio-btn-wrapper {
+        margin-left: 0rem;
+    }
+
+    .length-breadth-height-form-wrapper {
+        margin-top: 5rem;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .units {
+        margin-top: 3rem !important;
+        margin-left: 1rem;
+    }
+    
+
+    .lower-div {
+        display: flex ;
+        flex-direction: column !important;
+        margin-bottom: 2rem ;
+    }
+    
+}
+
+@media screen and (min-width: 320px) and (max-width: 424px) {
+    .left-div {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100% !important;
+    }
+    
+    .right-div {
+        width: 100% !important;
+    }
+
+    .category-select-txt {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 18px; 
+        color: #F5F5F5;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .radio-container {
+        display: flex;
+        flex-flow: column nowrap;
+        width: 100%;
+    }
+
+    .upper-div {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .radio-btn-wrapper {
+        margin-left: 0rem;
+    }
+
+    .length-breadth-height-form-wrapper {
+        margin-top: 5rem;
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .units {
+        margin-top: 3rem !important;
+        margin-left: 1rem;
+    }
+    
+
+    .lower-div {
+        display: flex ;
+        flex-direction: column !important;
+        margin-bottom: 2rem ;
+    }
+
+    .recent-calc-div {
+        display: flex;
+        flex-flow: column nowrap;
+        background-color: #2D2D2D;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-left: -1.8rem;
+    }
+    
+}
+
+
+

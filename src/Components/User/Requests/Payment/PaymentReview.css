@@ -1,0 +1,105 @@
+.payment_review {
+  margin: 30px 0;
+}
+
+.review_details {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.payment_method_address {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 15px;
+}
+
+.method_details,
+.address_details {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(53, 52, 52);
+  border-radius: 4px;
+  padding: 25px;
+  margin: 10px 0;
+}
+
+.method_details h3,
+.address_details h3 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.method_details div,
+.address_details div {
+  display: flex;
+  flex-direction: column;
+  background: #191b1e;
+  border-radius: 4px;
+  padding: 10px 5px;
+}
+
+.method_details div label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+  color: #ffb600;
+}
+
+.method_details div label span {
+  display: flex;
+  align-items: center;
+}
+
+.method_details div label span p {
+  margin: 0 8px;
+}
+
+.method_details div h4 {
+  margin: 15px 35px;
+}
+
+.method_details div h5 {
+  margin-bottom: 15px;
+  margin-left: 35px;
+}
+
+.method_details a {
+  margin-bottom: 15px;
+  margin-left: 35px;
+  color: #ffb600;
+  font-size: 16px;
+}
+
+.address_details p {
+  margin: 10px 20px;
+}
+
+.address_details a {
+  margin: 15px 0;
+  margin-left: 20px;
+  color: #ffb600;
+  font-size: 16px;
+}
+
+.order_summary {
+  margin: 0 15px;
+}
+
+@media (max-width: 480px) {
+  .review_details {
+    flex-direction: column;
+  }
+  .method_details {
+    width: 90vw;
+  }
+  .method_details h3, .address_details h3  {
+    font-size: 15px;
+  }
+  .method_details div, .method_details a, .address_details p, .address_details a{
+    font-size: 13px;
+  }
+ 
+}

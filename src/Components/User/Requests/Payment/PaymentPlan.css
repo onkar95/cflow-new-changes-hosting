@@ -1,0 +1,237 @@
+/* Payment page style */
+
+.payment_steps {
+  width: 60vw;
+  margin: 30px auto;
+}
+
+.payment_info {
+  width: 65vw;
+  padding: 30px;
+  background: #191b1e;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.payment_info h2 {
+  font-size: 24px;
+}
+
+.payment_info h3 {
+  font-size: 16px;
+  color: #8a8a8a;
+  margin-top: 5px;
+}
+
+.payment_info h4 {
+  margin-top: 60px;
+  color: #8a8a8a;
+}
+
+.payment_choose {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.payment_choose label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #313336;
+  border-radius: 4px;
+  padding: 11px 7px;
+}
+
+.payment_choose label:nth-child(3) img,
+.payment_choose label:last-child img {
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
+.payment_choose p {
+  margin-right: 15px;
+  margin-left: 5px;
+}
+
+.payment_plan {
+  padding: 30px;
+  background: #191b1e;
+  border-radius: 4px;
+  width: 30vw;
+}
+
+.payment_plan p,
+.payment_plan h6 {
+  font-size: 16px;
+  color: #8a8a8a;
+}
+
+.payment_plan h3 {
+  font-size: 18px;
+  color: #ffb600;
+}
+
+.payment_plan h4 {
+  margin: 15px 0;
+}
+
+.payment_plan h4,
+.payment_plan h5,
+.payment_plan h6 span {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.payment_summary {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 30px 20px;
+}
+
+.payment_inputs {
+  width: 46vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.user_details {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 5px;
+  border: 1px solid rgb(51, 50, 50);
+}
+
+.user_details label {
+  margin: 25px 20px;
+}
+
+.user_details p {
+  color: #8a8a8a;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.user_details input,
+.user_address label:last-child input {
+  background: black;
+  padding: 10px 7px;
+  border: 1px solid #ffb600;
+  width: 100%;
+}
+
+.user_details label:last-child {
+  display: flex;
+  align-items: center;
+}
+
+.user_details label:last-child span {
+  margin-right: 30px;
+}
+
+.user_address {
+  padding: 25px 5px;
+  margin-top: 20px;
+  border: 1px solid rgb(46, 45, 45);
+}
+
+.user_address label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user_address select {
+  background: #3a3636;
+  width: 98%;
+  padding: 10px 5px;
+  margin: 18px 0;
+}
+
+.user_address div {
+  margin: 10px 15px;
+}
+
+.user_address label h3 {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.user_address label h4 {
+  color: #ffb600;
+  font-size: 16px;
+}
+
+@media (max-width: 480px) {
+  #payment_current {
+    flex-direction: column-reverse;
+  }
+
+ .payment_plan {
+  width: 90vw;
+  height: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  }
+  .payment_plan h3 {
+    font-size: 15px;
+  }
+  .payment_plan h4 {
+    font-size: 13px;
+    margin: 5px 0;
+  }
+  .payment_plan h5 {
+    font-size: 13px;
+    margin-left: 25px;
+  }
+  .payment_plan h6 {
+    margin-top: -10px;
+  }
+  .payment_plan h6, .payment_plan h6 span  {
+    font-size: 13px;
+  }
+  .payment_plan span {
+    display: flex;
+    align-items: center;
+  }
+
+  .payment_info {
+    width: 98vw;
+    margin: 10px auto;
+  }
+  .payment_choose {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .payment_choose label {
+    margin: 10px 0;
+  }
+  .payment_info h2 {
+    font-size: 15px;
+  }
+  .payment_info h3, .payment_info h4 {
+    font-size: 13px;
+  }
+  .payment_choose label {
+    padding: 8px 4px;
+  }
+  
+  .payment_summary {
+    flex-direction: column;
+  }
+  .payment_inputs {
+    width: 90vw;
+  }
+  .user_details label p, .user_details label input::placeholder, .user_address div h3, .user_address div h4, select {
+    font-size: 14px;
+  }
+
+  .payment_steps {
+    width: 80vw;
+    margin: 5px auto;
+  }
+
+}

@@ -1,0 +1,160 @@
+.payment_confirm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.confirm_heading {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.confirm_heading img {
+  width: 47px;
+  height: 52px;
+  margin: 20px auto;
+}
+
+.confirm_heading h3 {
+  font-size: 24px;
+  color: #ffb600;
+  margin: 10px 0;
+}
+
+.confirm_heading p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #8a8a8a;
+  margin: 5px 0;
+}
+
+.confirm_items {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_first,
+.confirm_second,
+.confirm_third {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 40vw;
+}
+
+.confirm_first label,
+.confirm_second label,
+.confirm_third label {
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_first label p:first-child,
+.confirm_second label p:first-child,
+.confirm_third label p:first-child {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8a8a8a;
+}
+
+.confirm_first label p:nth-child(2),
+.confirm_second label p:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirm_summary {
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_summary h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.confirm_summary div {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.confirm_summary div label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 40vw;
+  margin: 8px 0;
+}
+
+.confirm_summary div label p:first-child {
+  font-size: 16px;
+  color: #8a8a8a;
+}
+
+.confirm_summary div label p:nth-child(2) {
+  font-size: 16px;
+}
+
+.confirm_close {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+}
+
+.confirm_close label:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #8a8a8a;
+}
+
+.confirm_close label:first-child span, .confirm_close h6 {
+  color: #ffb600;
+  cursor: pointer;
+}
+
+.confirm_close label:nth-child(2)  {
+  display: flex;
+  color: #ffb600;
+  cursor: pointer;
+}
+
+.confirm_close label img {
+  margin-right: 8px;
+}
+
+hr {
+  background: #8a8a8a;
+  height: 1px;
+  margin: 20px 0;
+}
+
+@media (max-width: 480px) {
+  .confirm_heading {
+    width: 90vw;
+  }
+  .confirm_heading h3 {
+    font-size: 15px;
+  }
+  .confirm_heading p, .confirm_first p, .confirm_second p, .confirm_third p, .confirm_summary div p {
+    font-size: 13px;
+  }
+  .confirm_first,
+  .confirm_second,
+  .confirm_third {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 85vw;
+  }
+}

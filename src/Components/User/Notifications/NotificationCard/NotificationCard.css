@@ -1,0 +1,78 @@
+.notificationcard_wrapper {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.notificationcard_icons {
+  display: flex;
+  justify-content: end;
+  width: 30%;
+  align-items: center;
+}
+
+.notificationcard_heading {
+  /* padding: 1rem; */
+  /* margin-top: -1.5rem; */
+  padding-left: 30px;
+}
+
+.notificationcard_heading>p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.close-icon {
+  color: red;
+  height: 23px !important;
+  width: 23px !important;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.pin-icon {
+  color: #ffb600 !important;
+  /* height: 23px !important; */
+  /* width: 13.5px !important; */
+  cursor: pointer;
+  /* margin-top: 0.8rem; */
+  /* margin-left: 0.3rem; */
+}
+
+.circle {
+  height: 56px;
+  width: 56px;
+  /* background-color: #bbb; */
+  border-radius: 50%;
+  background-color: #ffb600;
+  display: inline-block;
+}
+
+.tumblr {
+  position: relative;
+  left: 12px;
+  top: 13px;
+  width: 25px;
+}
+
+.notificationcard_button {
+  text-transform: capitalize !important;
+  color: #ffb600 !important;
+  /* position: absolute !important; */
+  /* display: flex !important; */
+  display: inline !important;
+  /* margin-top: -0.5rem; */
+  font-weight: normal !important;
+}
+
+.timing {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  /* line-height: 20px; */
+  color: rgb(160, 160, 160);
+}

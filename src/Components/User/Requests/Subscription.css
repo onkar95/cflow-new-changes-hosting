@@ -1,0 +1,154 @@
+.subscription_main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.price_heading {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.price_heading h2 {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 2px 5px;
+}
+
+.most-price {
+  display: flex;
+  justify-content: center;
+  margin-top: -14px;
+}
+
+.price_heading h1 {
+  color: #ffb600;
+  font-size: 36px;
+}
+
+.subscription_plans {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 40px 0;
+}
+
+.subscription_plans button {
+  padding: 8px 40px;
+  color: #ffb600;
+  background: none;
+  border: 1px solid #ffb600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FAQ_title {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.FAQ_title h2 {
+  font-size: 24px;
+}
+
+.FAQ_title p {
+  font-size: 16px;
+  color: rgba(255, 251, 242, 0.5);
+}
+
+.FAQ_title p span {
+  color: #ffb600;
+}
+
+.FAQ_data {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  width: 90vw;
+  height: 400px;
+}
+
+.css-yw020d-MuiAccordionSummary-expandIconWrapper.Mui-expanded,
+.css-i4bv87-MuiSvgIcon-root {
+  color: #ffffff;
+}
+
+#scroll_x {
+  overflow-x: scroll;
+  width: 90vw;
+}
+
+#scroll_x div {
+  width: 260px;
+}
+
+hr {
+  border: none;
+}
+
+.subscription_heading {
+  text-align: center;
+}
+
+.subscription_heading h3 {
+  color: #ffb600;
+  font-size: 24px;
+}
+
+.subscription_heading p {
+  color: #8a8a8a;
+  font-size: 16px;
+}
+
+.subscription_heading span {
+  color: white;
+}
+
+.plan_first .plans_top {
+  margin-bottom: 30px;
+}
+
+.plan_second {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plan_second h4 {
+  margin: -10px 0;
+}
+
+.plans_bottom h3 {
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .subscription_heading h3 {
+    font-size: 15px;
+    line-height: 30px;
+  }
+  .subscription_heading p {
+    font-size: 13px;
+    width: 85vw;
+    line-height: 30px;
+  }
+  .FAQ_title {
+    margin: 5px 0;
+  }
+  .FAQ_title h2 {
+    font-size: 18px;
+  }
+  .FAQ_data {
+    flex-direction: column;
+    height: 800px;
+    margin: 10px 0;
+  }
+  .FAQ_data div {
+    width: 90vw;
+  }
+}

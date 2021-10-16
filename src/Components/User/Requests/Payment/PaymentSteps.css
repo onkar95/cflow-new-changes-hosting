@@ -1,0 +1,37 @@
+.css-qivjh0-MuiStepLabel-label.MuiStepLabel-alternativeLabel,
+.css-qivjh0-MuiStepLabel-label.MuiStepLabel-alternativeLabel {
+  margin-top: -80px;
+  color: #ffb600;
+}
+
+.MuiStepper-root div span span:last-child span {
+  color: #ffb600;
+  font-size: 16px;
+}
+
+circle,
+.MuiStep-root path {
+  color: #ffb600;
+}
+
+.MuiStepLabel-root span:last-child {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 480px) {
+  .payment_steps {
+    width: 98vw;
+  }
+
+  .MuiStepLabel-root span:last-child {
+    text-align: center;
+    margin-top: -40px;
+  }
+
+  .MuiStepper-root div span span:last-child span {
+    color: #ffb600;
+    font-size: 14px;
+  }
+}
