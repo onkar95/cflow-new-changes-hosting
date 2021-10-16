@@ -40,6 +40,7 @@
   flex-direction: column;
 }
 .section > h2 {
+  padding-left: 4%;
   padding-bottom: 0.25rem;
   /* padding-left: 0.25rem; */
 }
@@ -52,7 +53,7 @@
   margin: 0 !important;
   /* background-color: red !important; */
   /* height: 25px !important; */
-  padding: 0.5rem 0rem !important;
+  /* padding: 0.5rem 0rem !important; */
 }
 .services_button:hover {
   color: #ffb600 !important;

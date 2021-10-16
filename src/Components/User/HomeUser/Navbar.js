@@ -45,8 +45,8 @@ const Navbar = ({
         onClick={() => setCurrentSection(3)}
         key={3}
       >
-        <h4 style={{marginTop:"60px"}}>Estimates</h4>
-        <h5 style={{backgroundColor:"#c87800",color:"black"}}>Comming Soon</h5>
+        <h4 style={{marginTop:"70px"}}>Estimates</h4>
+        <h5 style={{backgroundColor:"rgba(255, 182, 0, 0.1)",color:"rgb(255, 182, 0)",padding:"5px"}}>Comming Soon</h5>
       </div>
       <div
         className='home_user_section'
@@ -54,8 +54,8 @@ const Navbar = ({
         onClick={() => setCurrentSection(4)}
         key={4}
       >
-        <h4 style={{marginTop:"60px"}}>My Tendor</h4>
-        <h5 style={{backgroundColor:"#c87800",color:"black"}}>Comming Soon</h5>
+        <h4 style={{marginTop:"70px"}}>My Tendor</h4>
+        <h5 style={{backgroundColor:"rgba(255, 182, 0, 0.1)",color:"rgb(255, 182, 0)",padding:"5px"}}>Comming Soon</h5>
 
       </div>
 

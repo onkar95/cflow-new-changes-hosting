@@ -52,8 +52,9 @@ const Estimate = ({
       className='estimate'
       style={{ backgroundColor: theme ? '#ffffff' : '' }}
     >
-      <BreadCrumb theme={theme} />
-      {userId === undefined ? (
+      {/* <BreadCrumb theme={theme} /> */}
+      {/* {userId === undefined ? ( */}
+      {true ? (
         <EstimatesUnavailable theme={theme} />
       ) : (
         <div className='estimate-content'>
