@@ -214,14 +214,14 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
     return (
         <>
             {window.innerWidth > 600 ?
-                <div style={!editable?{border:"2px solid #ffb600"}:{}}>
-                    <Row className="profile_section_heading">
-                        <Column className="inputs_coloum_group">Personal information</Column>
-                        <Column className="inputs_coloum_group"></Column>
-                        <Column className="inputs_coloum_group"></Column>
+                <div >
+                    <Row className="profile_section_heading" style={{width:"max-content"}} >
+                        <Column style={{width:"max-content"}}>Personal information</Column>
+                        {/* <Column className="inputs_coloum_group"></Column>
+                        <Column className="inputs_coloum_group"></Column> */}
                     </Row>
 
-                    <hr style={{border: "1px solid #3d3d3d"}}/>
+                    <hr style={{border: "0.5px solid #3d3d3d"}}/>
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">Name</label>

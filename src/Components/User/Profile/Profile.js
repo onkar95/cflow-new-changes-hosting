@@ -57,7 +57,7 @@ const Profile = (
         } else {
             setSiteAddress(1)
         }
-    }, [site,currentSection,setSite])
+    }, [site, currentSection, setSite])
     console.log(siteAddress);
     console.log(site);
     const handleClickOpen = () => {
@@ -108,7 +108,7 @@ const Profile = (
                     : <SideMenu editable={editable} theme={theme} formData={formData} currentSection={currentSection} setCurrentSection={setCurrentSection} profilSections={profilSections} profilSectionsYellow={profilSectionsYellow} />
 
                 }
-                <Row>
+                <Row style={!editable &&(currentSection===0 ||currentSection===1)?{border:"2px solid #ffb600"}:{}}>
                     <Column className="main_content"  >
                         {currentSection === 0 && <PersonalDetails editable={editable} seteditable={seteditable} theme={theme} formData={formData} setFormData={setFormData} getUser={getUser} filled={filled} setFilled={setFilled} handleClickOpen={handleClickOpen} />}
                         {currentSection === 1 && <CompanyDetails editable={editable} seteditable={seteditable} theme={theme} formData={formData} setFormData={setFormData} getUser={getUser} filled={filled} setFilled={setFilled} handleClickOpen={handleClickOpen} />}

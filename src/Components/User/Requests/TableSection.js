@@ -139,7 +139,10 @@ function TableSection({theme, getAllVendor,setCurrentSection,newRequests,savedRe
                             <div className='switchsectionuser1'>
                                {tabs.map((tab, index) => (
                                 <div className="tab" style={{ border:(theme && tableSwitch===index)?"2px solid #ffb600":"" ,backgroundColor:(tableSwitch===index && !theme)?"#202020":(tableSwitch===index && theme)?"rgba(255, 182, 0, 0.15)":"", color:(tableSwitch===index && !theme)?"white":(tableSwitch===index && theme)?"#ffb600":theme?"gray":"grey", fontWeight:"700"}} onClick={()=>{setTableSwitch(index)}}>
-                                        {tab} <span class="quantity-div" style={{backgroundColor:(theme)?"#ffb600":tableSwitch===index?"#ffb600":"", color:(tableSwitch===index && theme)?"black":theme?"black":tableSwitch===index?"black":"white", padding: "4px"}}>{tab==="New Requests"?newRequests?.length:tab==="Pitched Requests"?pitchedRequests?.length:savedRequests?.length}</span>
+                                       {tab}
+                                       <span class="quantity-div" style={{ backgroundColor: (theme) ? "#ffb600" : tableSwitch === index ? "#ffb600" : "", color: (tableSwitch === index && theme) ? "black" : theme ? "black" : tableSwitch === index ? "black" : "white", padding: "4px" }}>
+                                           {tab === "New Requests" ? newRequests?.length : tab === "Pitched Requests" ? pitchedRequests?.length : savedRequests?.length}
+                                       </span>
                                 </div>
                             ))}
                             </div>

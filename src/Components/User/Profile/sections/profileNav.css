@@ -4,17 +4,19 @@
 
 .profile_navbar {
     display: flex;
-    margin: 5px;
+    margin: 5px 60px;
 }
 
 .userdetail {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 61%;
+    margin-left: 10px;
 }
 
 .userInfo {
     display: flex;
+    margin-left: 10px;
     width: 57%;
 }
 
@@ -60,7 +62,50 @@
 .users_pitch b {
     color: green;
 }
+.notVerified_user{
+    /* background-color:"#161616" !important; */
+    display: flex;
+    align-items: center;
+    width: 40%;
+    background-color: #161616;
+    padding:  40px 20px;
+    border-radius: 3px;
+    justify-content: space-between;
+    height: max-content;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+.notVerified_user_text{
+    width: 60%;
+    font-weight: normal;
+}
+.notVerified_user_text p{
+    font-size: 24px;
+    margin: 3px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.notVerified_user_text span{
+    font-size: 14px;
+    color: #727272;
+    /* color: #ffb600; */
+}
+.notVerified_user_button{
+    /* background-color: #727272; */
+    width: 40%;
+}
 
+.notVerified_user button{
+border: 3px solid #ffb600;
+font-weight:200;
+color: #ffb600;
+padding: 15px 20px;
+margin-right: 10px;
+border-radius: 4px;
+font-size: 16px;
+background-color: transparent;
+cursor: pointer;
+}
 .usersActivity_div {
     display: flex;
     width: 40%;
@@ -69,12 +114,12 @@
 
 .info {
     display: flex;
-    margin: 2px 21px;
+    margin: 2px 25px;
     width: max-content;
     justify-content: space-between;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 90%;
 }
 
 .info div {
@@ -90,7 +135,7 @@
 
 .info div h4 {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .row {
@@ -104,8 +149,8 @@
     color: rgb(243, 188, 70);
     text-align: center;
     font-size: 15px;
-    top: 36%;
-    left: 30%;
+    top: 34%;
+    left: 33%;
 }
 
 .logout_btn{
@@ -135,7 +180,7 @@
     background-color: inherit;
     height: max-content;
     cursor: pointer;
-
+width: max-content;
 }
 
 .row h1 {
@@ -201,7 +246,7 @@
 
     .profilePercent {
         margin: 0;
-        width: 35%;
+        width: 39%;
     }
 
     .row {
@@ -246,9 +291,58 @@
         font-size: 20px;
         margin: 0;
     }
+    .profile_navbar {
+        display: flex;
+        margin: 5px 0px;
+      }
 }
 
 @media(max-width:600px) {
+    .notVerified_user{
+        /* background-color:"#161616" !important; */
+        display: block;
+        align-items: center;
+        width: 100%;
+        background-color: #161616;
+        padding:  40px 20px;
+        border-radius: 3px;
+        justify-content: space-between;
+        height: max-content;
+        margin-top: 5px;
+        margin-right: 20px;
+    }
+    .notVerified_user_text{
+        width: fit-content;
+        font-weight: normal;
+    }
+    .notVerified_user_text p{
+        font-size: 24px;
+        margin: 3px;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    .notVerified_user_text span{
+        font-size: 14px;
+        color: #727272;
+        width: 90px !important;
+    }
+    .notVerified_user_button{
+        /* background-color: #727272; */
+        width: 40%;
+    }
+    
+    .notVerified_user button{
+    border: 3px solid #ffb600;
+    font-weight:200;
+    color: #ffb600;
+    padding: 5px 5px;
+    margin-right: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    }
+    
     .row {
         display: flex;
         flex-direction: column;
@@ -268,7 +362,7 @@
 
     .userInfo {
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         width: 100%;
     }
 
@@ -280,7 +374,7 @@
     }
 
     .userdetail div {
-        margin: 0 10px;
+        margin: 0 25px;
     }
 
     .usersActivity {
@@ -330,7 +424,9 @@
         width: auto;
         font-size: 17px;
     }
-
+    .userdetail div {
+        margin: 0 15px;
+    }
     .profilePercent {
         width: 33%;
     }

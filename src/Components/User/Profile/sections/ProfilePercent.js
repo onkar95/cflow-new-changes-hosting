@@ -4,48 +4,48 @@ const ProfilePercent = ({ height, siteAddress, setProfileComplete, formData, cur
     // console.log(filled,"filled")
     // const val = filled.address + filled.company + filled.personal
     let temp = 0;
-    // console.log(formData.site)
+    // console.log(formData?.site)
     console.log(siteAddress)
     useEffect(() => {
         if (formData != "") {
 
-            if (formData.first_name !== "") {
+            if (formData?.first_name !== "") {
                 temp++;
             }
-            if (formData.phone !== "") {
+            if (formData?.phone !== "") {
                 temp++;
             }
-            if (formData.city !== "") {
+            if (formData?.city !== "") {
                 temp++;
             }
-            if (formData.pin !== "") {
+            if (formData?.pin !== "") {
                 temp++;
             }
-            if (formData.email !== "") {
+            if (formData?.email !== "") {
                 temp++;
             }
-            if (formData.wpp !== "") {
+            if (formData?.wpp !== "") {
                 temp++;
             }
-            if (formData.state !== "") {
+            if (formData?.state !== "") {
                 temp++;
             }
-            if (formData.company_detail_name !== "") {
+            if (formData?.company_detail_name !== "") {
                 temp++;
             }
-            if (formData.phone !== "") {
+            if (formData?.phone !== "") {
                 temp++;
             }
-            if (formData.company_name !== "") {
+            if (formData?.company_name !== "") {
                 temp++;
             }
-            if (formData.company_title !== "") {
+            if (formData?.company_title !== "") {
                 temp++;
             }
-            if (formData.email !== "") {
+            if (formData?.email !== "") {
                 temp++;
             }
-            if (formData.wpp !== "") {
+            if (formData?.wpp !== "") {
                 temp++;
             }
             if (siteAddress !== 1) {

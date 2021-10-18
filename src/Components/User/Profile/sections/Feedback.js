@@ -67,9 +67,10 @@ const Feedback = ({ theme, formData, setFormData, getUser, handleClickOpen }) =>
     return (
         <Column>
             <Column className="profile_section_heading">
-                Rate Us
+                <div style={{marginRight:"100px",width:"31%"}}> Rate Us</div>
+                <div> Message Us</div>
             </Column>
-            <hr style={{border: "1px solid #3d3d3d", width: "100%"}}/>
+            <hr style={{ border: "0.5px solid #3d3d3d", width: "100%" }} />
             <div className="feedback_section" >
                 <div className="rating_div">
                     <h3>Rating</h3>
@@ -119,8 +120,8 @@ const Feedback = ({ theme, formData, setFormData, getUser, handleClickOpen }) =>
                     <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
                         <Textarea
                             style={theme === true ? {
-                                backgroundColor: "#e0ded8", resize: "none", minHeight: "9rem", width: "65%",color:"black"
-                            } : { resize: "none", minHeight: "9rem", width: "65%" ,color:"white"}}
+                                backgroundColor: "#e0ded8", resize: "none", minHeight: "9rem", width: "65%", color: "black"
+                            } : { resize: "none", minHeight: "9rem", width: "65%", color: "white" }}
                             className="feedback_form"
                             placeholder='Give Your Feedback Here'
                             onChange={(e) => setFeed(e.target.value)}

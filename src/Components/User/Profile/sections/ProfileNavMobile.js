@@ -20,6 +20,8 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
     const [phone, setPhone] = useState(formData?.phone_no ? formData?.phone_no : "");
     const [email, setEmail] = useState(formData?.email ? formData?.email : "");
     const [wpp, setWpp] = useState(formData?.whatsapp_no ? formData?.whatsapp_no : "");
+    const [name, setName] = useState(formData?.first_name ? formData?.first_name : "");
+
     console.log(profileComplete)
     // const [filled, setFilled] = useState("")
     const [open, setOpen] = useState(false);
@@ -46,7 +48,15 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
     //     }
 
     // }, [])
-
+    const completeProfile = () => {
+        if (currentSection === 0) {
+            setCurrentSection(1)
+        } else if (currentSection === 1) {
+            setCurrentSection(7)
+        } else if (currentSection === 7) {
+            setCurrentSection(0)
+        }
+    }
     return (
         <>
 
@@ -61,7 +71,7 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                         }                    </div>
                     <div className="row">
                         <div style={{ display: "flex", width: "100%", alignItems: "center" }}>
-                            <h1>Customer name</h1>
+                            <h1> {name}</h1>
                             {email != "" ? <div className="profileCompleted_icon" >
                                 <img src={completedIcon} style={{ width: "30px" }} alt="" />
                                 <span className="hover_txt" style={{ top: "20%" }}> profile is verified</span>
@@ -70,7 +80,7 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                                 <div className="profileCompleted_icon" >
                                     <img src={pendingIcon} style={{ width: "30px", color: "gray" }} alt="" />
                                     <span className="hover_txt" style={{ color: "gray", top: "20%" }}> profile is not verified</span>
-                                </div>}                            <h3>Customer</h3>
+                                </div>}
                         </div>
 
                         <div className="logout_btn">
@@ -98,14 +108,15 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
 
                 </div>
                 {profileComplete != 100 ?
+                // {/* {true ? */}
 
-                    <div className="usersActivity">
-                        <div >
-                            <h1>complete your prfile</h1>
-                            <h5>please complete your profile to continue with us</h5>
+                    <div className="notVerified_user" style={theme ? { backgroundColor: "#ffb600" } : {}}>
+                        <div className="notVerified_user_text">
+                            <p>Complete your profile</p>
+                            <span>please complete your profile so that you can start requesting for products </span>
                         </div>
-                        <div className="row" style={{ width: "max-content", padding: "3px" }}>
-                            <h3>complete profile</h3>
+                        <div className="notVerified_user_button" style={{ width: "max-content", padding: "3px" }}>
+                            <button style={theme ? { color: "#161616", border: "3px solid #161616", margin: "8px" } : { margin: "8px" }} onClick={completeProfile}>Complete Profile</button>
                         </div>
                     </div>
                     :

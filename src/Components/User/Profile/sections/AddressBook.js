@@ -8,7 +8,7 @@ import EditIcon from "../../../../Images/newProfileYellow/Edit profile.png"
 import DeleteIcon from "../../../../Images/newProfileYellow/Delete.png"
 import AddIcon from "../../../../Images/newProfileYellow/add new address.png"
 
-const AddressBook = ({ setFilled,filled,theme, setCurrentSection,currentSection, siteNo, site, setSite, getSite, handleClickOpen, setSiteNo }) => {
+const AddressBook = ({ setFilled, filled, theme, setCurrentSection, currentSection, siteNo, site, setSite, getSite, handleClickOpen, setSiteNo }) => {
 
     const [userId, setUserId] = useState(JSON.parse(localStorage.getItem('profile'))?.data?.id)
 
@@ -54,51 +54,58 @@ const AddressBook = ({ setFilled,filled,theme, setCurrentSection,currentSection,
     return (
         <div className="addressBook" >
             <Row className="profile_section_heading">
-                <Column className="inputs_coloum_group"> Site Address Book</Column>
+                <Column className="inputs_coloum_group" style={window.innerWidth < 600 ? { width: "max-content" } : {}}> Site Address Book</Column>
             </Row>
             {/* <hr style={{ width: "100%" }} /> */}
-            <hr style={{border: "1px solid #3d3d3d"}}/>
+            <hr style={{ border: "1px solid #3d3d3d" }} />
 
-            <div className="saved_address">
-                {
-                    site?.map((value, index) => (
-                        <div className="address" style={theme === true ? { backgroundColor: "#e0ded8 " } : null}>
-                            <div className="address_details">
-                                <h1>
-                                    Site Address {index + 1}
-                                </h1>
-                                <h5>
-                                    {value?.building_name},{value?.city}
-                                </h5>
-                            </div>
-                            <div className="address_btn">
-                                <div className="del-edit-add-btn edit_icon" style={{ margin: "3px" }} onClick={() => handleEdit(index)} >
-                                    <img src={EditIcon} alt="" />
-                                </div>
-                                <div className="del-edit-add-btn delete_icon" onClick={handleDelete} >
-                                    <img src={DeleteIcon} alt="" />
-                                </div>
-                            </div>
-
-                        </div>
-                    ))
-                }
-            </div>
-
-
-            <ToastContainer />
-            <div className="addNewAddress_btn" style={theme === true ? { backgroundColor: "#c5c3c3" } : null}>
+            <div >
                 <div>
-                    add new site Address
+                    <div className="saved_address">
+                        {
+                            site?.map((value, index) => (
+                                <div className="address" style={theme === true ? { backgroundColor: "#e0ded8 " } : null}>
+                                    <div className="address_details">
+                                        <h1>
+                                            Site Address {index + 1}
+                                        </h1>
+                                        <h5>
+                                            {value?.building_name},{value?.city}
+                                        </h5>
+                                    </div>
+                                    <div className="address_btn">
+                                        <div className=" edit_icon" style={{ margin: "10px" }} onClick={() => handleEdit(index)} >
+                                            <img src={EditIcon} style={{ width: "20px", height: "22px", padding: "8px",borderRadius:"3px" }} alt="" />
+                                        </div>
+                                        <div className=" delete_icon" onClick={handleDelete} >
+                                            <img src={DeleteIcon} style={{ margin: "3px", width: "20px", height: "20px", padding: "8px",borderRadius:"3px" }} alt="" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            ))
+                        }
+                        <div className=" addNewAddress_btn " style={theme === true ? { backgroundColor: "#e0ded8" } : null}>
+                            <div>
+                                Add new site Address
+                            </div>
+                            <button
+                                onClick={() => setCurrentSection(9)}
+                            // className="disabled_save_butn"
+                            >
+                                <img src={AddIcon} alt="" style={{ height: "20px", marginRight: "2px" }} />
+                                New Address
+                            </button>
+                        </div>
+                    </div>
+                    <ToastContainer />
+
                 </div>
-                <button
-                    onClick={() => setCurrentSection(9)}
-                // className="disabled_save_butn"
-                >
-                    <img src={AddIcon} alt="" style={{ height: "20px", marginRight: "2px" }} />
-                    New Address
-                </button>
+
             </div>
+
+
+
         </div >
     );
 };

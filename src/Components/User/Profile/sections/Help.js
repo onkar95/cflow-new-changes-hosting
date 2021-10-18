@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Column, Button, Textarea } from "../../Styled/Styled";
 import { GrAttachment } from "react-icons/gr";
 import Submit from "../../../../Images/newProfileYellow/Send Message.png"
+import Attachment from "../../../../Images/newProfileYellow/Attachment.png"
 
 const Help = ({ theme }) => {
   const inputFile = useRef(null);
@@ -15,23 +16,23 @@ const Help = ({ theme }) => {
         <p>Help Center</p>
       </div>
       {/* {<hr style={{ width: "100%" }} />} */}
-      <hr style={{border: "1px solid #3d3d3d", width: "100%"}}/>
+      <hr style={{border: "0.5px solid #3d3d3d", width: "100%"}}/>
 
       <div className="help">
 
         <div className="help_ques_div">
           <div>
-            <p style={theme?{color:"black"}:{color:"white"}}>How can i track my order?</p>
-          <ans>you will recive notifications to track your order you will be provided customer care numbers if you have any problem releated to order you can contact us</ans>
+            <p style={theme?{color:"black"}:{color:"#3c3c3c"}}>How can i track my order?</p>
+          <ans style={theme?{color:"black"}:{color:"white"}}>you will recive notifications to track your order you will be provided customer care numbers if you have any problem releated to order you can contact us</ans>
           </div>
 
           <div>
-            <p style={theme?{color:"black"}:{color:"white"}}>How can i change my shipping address?</p>
-            <ans>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa suscipit mollitia eius id. Corporis laborum temporibus eveniet vero fugit alias!</ans>
+            <p style={theme?{color:"black"}:{color:"#3c3c3c"}}>How can i change my shipping address?</p>
+            <ans style={theme?{color:"black"}:{color:"white"}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa suscipit mollitia eius id. Corporis laborum temporibus eveniet vero fugit alias!</ans>
           </div>
 
           <div>
-            <p>stil have question? <a href="">contact us</a></p>
+            <p style={theme ? { color: "black" } : { color: "#3c3c3c" }}>stil have question? <span style={{color:"#ffb600",border:"none"}}href="">contact us</span></p>
           </div>
 
         </div>
@@ -87,7 +88,8 @@ const Help = ({ theme }) => {
                 onClick={onFileClick}
                 className="disabled_save_butn  "
               >
-                <GrAttachment style={{ height: "15px", marginRight: "5px" }}/>
+                {/* <GrAttachment  /> */}
+                <img src={Attachment} style={{ height: "15px", marginRight: "5px" }} alt="" />
                 Attach
               </div>
               <div

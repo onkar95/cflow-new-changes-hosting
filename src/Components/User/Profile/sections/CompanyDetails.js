@@ -142,7 +142,6 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                     // style={{
                     //     width: "100%",
                     // }}
-                    style={!editable ? { border: "2px solid #ffb600", width: "100%" } : { width: "100%" }}
                 >
 
                     <Row className="profile_section_heading">
@@ -151,7 +150,7 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                         {/* <Column className="inputs_coloum_group">security</Column> */}
                     </Row>
 
-                    <hr style={{ border: "1px solid #3d3d3d" }} />
+                    <hr style={{ border: "0.5px solid #3d3d3d" }} />
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">name</label>

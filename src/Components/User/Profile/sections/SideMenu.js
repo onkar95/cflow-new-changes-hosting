@@ -1,7 +1,8 @@
 import React from 'react'
-import logutIcon from "../../../../Images/newProfileYellow/Logout.png"
+// import logutIcon from "../../../../Images/newProfileYellow/Logout.png"
+import logutIcon from "../../../../Images/newProfileYellow/LogoutYellow.svg"
 import completedIcon from "../../../../Images/newProfile/Verification Completed.svg"
-import LogoutPopup from "../../../Vendor/Profile/sections/Logout/LogoutPopup";
+import LogoutPopup from "../Logout/LogoutPopup";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./Profile.css"
@@ -22,7 +23,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
         setOpen(true)
     }
     return (
-        <div>
+        <div style={{overflow:"hidden"}}>
             {window.innerWidth > 600 ?
                 // <Row >
                 <div className="profile_button">
@@ -31,7 +32,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                             <div className="profile_button_div" style={currentSection === 0 ? { borderTop: "#ffb600 solid 3px", padding: "25px 10px" } : { padding: "25px 10px" }}>
                                 <img src={currentSection === 0 ? profilSectionsYellow[0] : profilSections[0]} alt="" />
                                 <button
-                                    disabled={!editable}
+                                    // disabled={!editable}
                                     style={
                                         currentSection === 0
                                             ? {
@@ -45,9 +46,9 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                             </div>
                             <div className="profile_button_div" style={currentSection === 1 ? { borderTop: "#ffb600 solid 3px", padding: "25px 10px" } : { padding: "25px 10px" }}>
 
-                                <img src={currentSection === 1 ? profilSectionsYellow[1] : profilSections[1]} alt="" />
+                                <img src={currentSection === 1 ? profilSectionsYellow[2] : profilSections[2]} alt="" />
                                 <button
-                                    disabled={!editable}
+                                    // disabled={!editable}
                                     style={
                                         currentSection === 1
                                             ? {
@@ -72,7 +73,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                             <div className="profile_button_div" style={currentSection === 7 ? { borderTop: "#ffb600 solid 3px", padding: "25px 10px" } : { padding: "25px 10px" }}>
                                 <img src={currentSection === 7 ? profilSectionsYellow[3] : profilSections[3]} alt="" />
                                 <button
-                                    disabled={!editable}
+                                    // disabled={!editable}
                                     style={
                                         currentSection === 7
                                             ? {
@@ -87,7 +88,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                             <div className="profile_button_div" style={currentSection === 5 ? { borderTop: "#ffb600 solid 3px", padding: "25px 10px" } : { padding: "25px 10px" }} >
                                 <img src={currentSection === 5 ? profilSectionsYellow[5] : profilSections[5]} alt="" />
                                 <button
-                                    disabled={!editable}
+                                    // disabled={!editable}
                                     style={
                                         currentSection === 5
                                             ? {
@@ -99,7 +100,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                             </div>
                             <div className="profile_button_div"  >
                                 <div className="logout_btn" >
-                                    <button disabled={!editable} onClick={handleLogoutConfirmation} style={theme ? { color: "#ffb600", display: "flex", alignItems: "center" } : { color: "#ffb600", display: "flex", alignItems: "center" }}> <img src={logutIcon} style={{marginRight:"5px"}} alt="" /> Logout</button>
+                                    <button disabled={!editable} onClick={handleLogoutConfirmation} style={theme ? { color: "#ffb600", display: "flex", alignItems: "center" } : { color: "#ffb600", display: "flex", alignItems: "center" }}> <img src={logutIcon} style={{marginRight:"15px"}} alt="" /> Logout</button>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +125,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                         >Personal details</button>
                     </div>
                     <div className="profile_button_div" style={currentSection === 1 ? { borderTop: "#ffb600 solid 3px", padding: "25px 10px" } : { padding: "25px 10px" }}>
-                        <img src={currentSection === 1 ? profilSectionsYellow[1] : profilSections[1]} alt="" />
+                        <img src={currentSection === 1 ? profilSectionsYellow[2] : profilSections[2]} alt="" />
                         <button
                             style={
                                 currentSection === 1

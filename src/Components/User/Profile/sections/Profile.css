@@ -1,6 +1,6 @@
 .profile_navbar {
   display: flex;
-  margin: 5px;
+  margin: 5px 40px;
 }
 
 .userdetail {
@@ -155,7 +155,8 @@
 
 .profile_sections {
   background-color: #161616;
-  margin: 25px 0;
+  margin: 25px 40px;
+  /* width: 80%; */
 }
 
 .profilePercent {
@@ -178,9 +179,9 @@
 }
 
 .profile_button_nav button {
-  font-weight: 500;
+  font-weight: 200;
   background-color: transparent;
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
   /* display: flex; */
   border: none;
@@ -209,7 +210,8 @@
   /* cursor: pointer; */
 }
 .profile_button_div img{
-  height: 20px;
+  height: 18px;
+  margin-right: 10px;
 }
 .profile_button_div button{
   cursor: pointer;
@@ -227,7 +229,10 @@
 }
 
 .profile_section_heading {
+  display: flex;
+  flex-direction: row;
   margin: 20px 0;
+  width: 100%;
 }
 
 .main_content input {
@@ -325,14 +330,14 @@
 }
 
 .addNewAddress_btn {
-  width: 390px;
+  width: 90%;
   display: flex;
-  padding: 20px;
+  padding: 14 !important;
   justify-content: space-between;
-  margin: 10px;
+  margin: 10px 25px !important;
   border-radius: 10px;
   background-color: #141212;
-  margin: 0 123px;
+  /* margin: 0 30px; */
   align-items: center;
 }
 
@@ -344,33 +349,35 @@
   margin: 24px 19px;
   font-size: inherit;
   cursor: pointer;
+  padding: 5px 15px;
 }
 
 .edit_icon {
   background-color: #f5b81d;
   padding: 4px;
   transform: "translate(-50%)";
-  border-radius: 7px;
+  border-radius: 3px;
 }
 
 .delete_icon {
   border: rgb(240, 16, 16) solid 2px;
   padding: 0px;
+  border-radius: 3px;
 }
 
 .saved_address {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 70%;
-  margin: 5px 110px;
+  width: 90%;
+  /* margin: 5px 110px; */
 }
 
 .address {
   display: flex;
-  padding: 20px;
+  padding: 14px;
   justify-content: space-between;
   /* border: #2d2d2d solid 2px; */
-  margin: 10px;
+  margin: 10px 25px;
   border-radius: 10px;
   background-color: #141212;
 }
@@ -393,7 +400,7 @@
 
 .rating_div {
   display: "block";
-  width: "30%";
+  width: "50%";
   margin-left: "10px";
   margin: 0 30px;
 
@@ -402,8 +409,8 @@
 .feedback_div {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  margin-left: 10px;
+  width: 100%;
+  margin-left: 40px;
 }
 
 .feedback_div h3 {
@@ -542,6 +549,10 @@
 }
 
 @media(max-width:950px) {
+  .profile_navbar {
+    display: flex;
+    margin: 5px 0px;
+  }
   .help_btns div {
     left: 10%;
   }
@@ -608,6 +619,11 @@
   .users_pitch {
     width: 81%;
   }
+  .profile_sections {
+    background-color: #161616;
+    margin: 25px 12px;
+    /* width: 80%; */
+}
 }
 
 @media(max-width:600px) {
@@ -636,7 +652,7 @@
 
   .userInfo {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
   }
 
@@ -678,9 +694,9 @@
   }
 
   .address {
-    padding: 25px;
+    padding: 15px;
     display: flex;
-    margin: 28px;
+    margin: 18px;
     background-color: #262424;
     flex-wrap: wrap;
   }
@@ -797,6 +813,16 @@
     font-size: 20px;
     margin: 0;
   }
+  .profile_sections {
+    background-color: #161616;
+    margin: 24px 2px;
+    /* width: 80%; */
+}
+.inputs_coloum_group {
+  width: max-content;
+  font-size: 18px;
+}
+
 }
 
 @media(max-width:400px) {
@@ -841,5 +867,29 @@
 
   .addNewAddress_btn {
     background-color: transparent;
+  }
+ 
+}
+
+@media(max-width:326px) {
+
+  .row h1 {
+    width: auto;
+    font-size: 14px;
+  }
+
+  .addNewAddress_btn div {
+    display: none;
+  }
+
+  .addNewAddress_btn {
+    background-color: transparent !important;
+  }
+  .address {
+    padding: 5px;
+    display: flex;
+    margin: 4px;
+    background-color: #262424;
+    flex-wrap: wrap;
   }
 }
