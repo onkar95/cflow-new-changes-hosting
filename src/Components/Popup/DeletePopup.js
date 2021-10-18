@@ -111,7 +111,7 @@ export default function CustomizedDialogs({ open, setOpen, getCart, id }) {
       minHeight: "fit-content",
       maxHeight: "fit-content",
 
-      maxWidth: winsize > 850 ? "30%" : "80%",
+      maxWidth: winsize > 1200 ? "30%" : "80%",
       backgroundColor: "#121417",
       padding: winsize > 1000 ? "1rem 0rem" : "1rem -1rem",
     },
@@ -139,7 +139,7 @@ export default function CustomizedDialogs({ open, setOpen, getCart, id }) {
       >
         <div className="main-del">
           <DialogTitle onClose={handleClose}>
-            <img src={Logo} alt="logo" className="delete-dialog-img" />
+          {/*<img src={Logo} alt="logo" className="delete-dialog-img" />*/}
             <CloseIcon
               onClick={handleClose}
               style={{
@@ -195,7 +195,7 @@ export default function CustomizedDialogs({ open, setOpen, getCart, id }) {
                 Cancel
               </button>
             </div>
-            <div className="SocialLogo">
+            {/*<div className="SocialLogo">
               <a href="#">
                 <img src={Fb} />
               </a>
@@ -205,7 +205,7 @@ export default function CustomizedDialogs({ open, setOpen, getCart, id }) {
               <a href="#">
                 <img src={Twitter} />
               </a>
-            </div>
+            </div>*/}
           </DialogContent>
         </div>
       </Dialog>

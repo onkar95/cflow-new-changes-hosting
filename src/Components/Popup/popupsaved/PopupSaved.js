@@ -194,7 +194,7 @@ export default function CustomizedDialogs({open,setOpen,title}) {
     minHeight: 'fit-content',
     maxHeight: 'fit-content',
     
-    maxWidth:winsize>850?"30%":"80%",
+    maxWidth:winsize>850?"80%":"80%",
     backgroundColor: "#121417",
     padding:winsize>1000?"1rem 0rem":"1rem -1rem"
 },
@@ -219,13 +219,12 @@ const classes = useStyles()
     <>
       <Dialog open={open} classes={{ paper: classes.dialogPaper }}>
           <DialogTitle>
-              <div  style={{display: 'flex',color: 'white',justifyContent:'space-between',marginTop:winsize>1000 &&'-5%'}}>
-              <img src={Logo} style={{fontSize:"50",height:winsize<1000 ?56:86,width:250}}/>
+              <div  style={{display: 'flex',color: 'white',justifyContent:'flex-end',marginTop:winsize>1000 &&'-5%', maxWidth:"100%"}}>
                 <CloseIcon  onClick={handleClose}style={{marginTop:winsize>1000 &&'6%',cursor:"pointer"}}/>
               </div>
               
           </DialogTitle>
-          <DialogContent >              
+          <DialogContent className="dialog-content-main">              
               <div  style={{display:"flex",justifyContent: 'center',alignItems: 'center',flexDirection: 'column'}}>
               <img src={SavedIcon} style={{objectFit:'contain',height:winsize>1000 ?110:80,width:250}}/>    
               <h3 style={{color:"#ffb600",fontWeight:"700",fontSize:winsize<1000 ?16:22,textAlign:"center"}}>{title}</h3>   

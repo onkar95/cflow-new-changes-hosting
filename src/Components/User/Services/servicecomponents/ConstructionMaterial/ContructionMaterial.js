@@ -86,6 +86,7 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
     ])
     let fuse=new Fuse(arr, {keys:["name"], threshold:0.3})
 
+    const [address, setAddress]=useState()
     const [option, setOption]=useState("")
     const [search, setSearch]=useState("")
     const [searchResult, setSearchResult]=useState([])
@@ -96,7 +97,6 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
     const [currentUnit, setCurrentUnit] = useState("")
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [requestclicked, setRequestClicked] = React.useState(false)
-    const [description, setDescription] = React.useState("")
 
     function handleSearch(event){
         event.preventDefault();
@@ -116,13 +116,15 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
 
     const brands = site
 
-    const [urgent, setUrgent] = useState(true)
+    const [urgent, setUrgent] = useState(false)
     const [flexible, setFlexible] = useState(true)
     const onClickUrgent = () => {
         setFlexible(false)
+        setUrgent(true)
     }
     const onClickFlexible = () => {
         setUrgent(false)
+        setFlexible(true)
     }
     const handleCloseIcon = () => {
         setModalOpen(false)
@@ -135,10 +137,11 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
 
     const useStyles = makeStyles({
         dialogPaper: {
-            minHeight: '60vh',
-            maxHeight: '60vh',
-            minWidth: "25%",
-            maxWidth: "25%",
+            minHeight: '450px',
+            maxHeight: '450px',
+            overflowY:"visible",
+            minWidth: "350px",
+            maxWidth: "350px",
             backgroundColor: "#121417",
             padding: "1rem 1.25rem"
         },
@@ -167,7 +170,7 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
     useEffect(() => {
         quantitywithunit = quantity + " " + currentUnit
         console.log(currentUnit, "currentUnit")
-        setNewRequest({ ...newRequest, delivery_address: site ? site[check] : null, type:option, urgent: urgent, quantity: quantitywithunit, deliver_by: startDate, data: data,description:description })
+        setNewRequest({ ...newRequest, delivery_address: site ? site[check] : null, type:option, urgent: urgent, quantity: quantitywithunit, deliver_by: startDate, data: data })
         console.log(newRequest)
     }, [requestclicked, check, option, modalopen, urgent, quantity, startDate, data, currentUnit])
 
@@ -200,7 +203,6 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                     getAllVendor()
                     setCheck("")
                     handleClickOpen();
-                    console.log(response.data);
                 })
         }
 
@@ -213,6 +215,7 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
 
     const [name, setName] = useState("")
     const classes = useStyles();
+
     return (
         <div className="option-container">
             <div className="selection-section">
@@ -233,18 +236,18 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                 {window.screen.width>=1185 && <CartItemNumber setCurrentSectionMain={setCurrentSectionMain} cartLength={cartLength} theme={theme}/>}
                 <div className="right-side-div" style={{backgroundColor:theme?"#F8F8F8":""}}>
                     {option === "" && <div style={{textAlign:'center', marginTop:'40%'}}><img src={SelectProduct}></img><div className="selected-header">Select a product</div><div className="description" style={{width:'60%', margin:'auto'}}>Please select a particular product or service first.</div></div>}
-                    {option === "Sand" && <SandInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} />}
-                    {option === "Bricks & Blocks" && <BrickInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} />}
-                    {option === "Cement" && <CementInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "RMC Mixture" && <RMCInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "Stones" && <StoneInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "Marble & Tile" && <MarbleInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "TMT Bars" && <TMTInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "Pipes" && <PipesInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "Paint & Putty" && <PaintInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "Wood" && <WoodInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setData={setData} newRequest={newRequest} setNewRequest={setNewRequest} dropdownData={dropdownData} />}
-                    {option === "Iron" && <IronInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
-                    {option === "Steel" && <SteelInput setDescription={setDescription} description={description} getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Sand" && <SandInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} />}
+                    {option === "Bricks & Blocks" && <BrickInput getCart={getCart} theme={theme} formData={formData} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} />}
+                    {option === "Cement" && <CementInput getCart={getCart} theme={theme} formData={formData} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "RMC Mixture" && <RMCInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Stones" && <StoneInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Marble & Tile" && <MarbleInput getCart={getCart} theme={theme} formData={formData} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "TMT Bars" && <TMTInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Pipes" && <PipesInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Paint & Putty" && <PaintInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Wood" && <WoodInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setData={setData} newRequest={newRequest} setNewRequest={setNewRequest} dropdownData={dropdownData} />}
+                    {option === "Iron" && <IronInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
+                    {option === "Steel" && <SteelInput getCart={getCart} theme={theme} formData={formData} currentUnit={currentUnit} setCurrentUnit={setCurrentUnit} setOpenSaved={setOpenSaved} quantity={quantity} setQuantity={setQuantity} newRequest={newRequest} data={data} check={check} modalopen={modalopen} setModalOpen={setModalOpen} setNewRequest={setNewRequest} setData={setData} dropdownData={dropdownData} />}
                 </div>
             </div>   
             
@@ -271,13 +274,14 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="materials-form-date" />
                         {/* <p style={{color:"white",textTransform:"capitalize",fontSize:"0.8rem",marginLeft:"2px",marginBottom:"2%",marginTop:"1%"}}>Quantity</p>
                 <TextField id="outlined-basic" placeholder="Enter a value" value={quantity} onChange={(e) => setQuantity(e.target.value)} variant="outlined"  className={classes.root} style={{backgroundColor:"#08090C",width:"95%",boxShadow:"-4px -4px 15px rgba(232, 237, 243, 0.05), 10px 4px 15px rgba(2, 3, 3, 0.2)", borderRadius:"10px" }} InputProps={ {  className: classes.input }} /> */}
+                        <div style={{color:"white", fontSize:"12px"}}>Current delivery type :- <span style={{color:flexible===true?"green":urgent===true?"red":"white"}}>{flexible===true?"Flexible":urgent===true?"Urgent":"none"}</span>. Select your preferred one below.</div>
                         <p style={{ color: "white", textTransform: "capitalize", fontSize: "1rem", marginLeft: "2px", marginTop: "2%" }}>Order Type</p>
                         <div style={{ width: "100%", height: "70%", display: "flex", alignItems: "flex-start", justifyContent: "flex-start", marginBottom: "2%" }}>
-                            {urgent && <Button variant="contained" style={{ height: "80%", marginTop: "2%", marginRight: "10%", backgroundColor: "#ED4F4F", borderRadius: "20px" }} onClick={onClickUrgent}>
+                            {/*urgent && */<Button variant="contained" style={{ height: "80%", marginTop: "2%", marginRight: "10%", backgroundColor: "#ED4F4F", borderRadius: "20px" }} onClick={onClickUrgent}>
 
                                 urgent
                             </Button>}
-                            {flexible && <Button variant="contained" style={{ height: "80%", marginTop: "2%", backgroundColor: "#3CC13B", borderRadius: "20px" }} onClick={onClickFlexible}>
+                            {/*flexible && */<Button variant="contained" style={{ height: "80%", marginTop: "2%", backgroundColor: "#3CC13B", borderRadius: "20px" }} onClick={onClickFlexible}>
 
                                 Flexible
                             </Button>}
@@ -287,7 +291,6 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                
                 <RadioGroup row aria-label="Trade" name="Trade" value={value} onChange={handleChange} style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
                     <FormControlLabel value="trade" control={<Radio color="primary"/>} label="Trade" style={{color:"white"}}/>
-
                     <FormControlLabel value="Non-trade" control={<Radio color="primary" />} label="Non-trade" style={{color:"white"}} />
                     
                 </RadioGroup>
@@ -329,9 +332,10 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
 
                                                 />
                                             }
-                                            label={`site ${index + 1}`}
+                                            /*label={`site ${index + 1}`}*/
+                                            label={brand.door_no+", "+brand.building_name+", "+brand.street+", "+brand.city+", pin-" +  +brand.pin+", "+brand.state+", near "+brand.landmark}
                                             style={{
-                                                width: "15rem",
+                                                width: "20rem",
                                                 padding: "4%",
                                                 backgroundColor: "#08090C",
                                                 color: "white",

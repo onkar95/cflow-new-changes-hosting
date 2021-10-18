@@ -9,7 +9,9 @@
 
 .ButtonLogoutModal {
   background-color: #ffb600;
-  padding: 13px 21px;
+  /*padding: 13px 21px;*/
+  width:200px;
+  height:50px;
   font-size: 18px;
   border: none;
   border-radius: 5px;
@@ -17,12 +19,14 @@
 
 .ButtonLogoutCancel {
   background-color: transparent;
-  padding: 12px 20px;
+  /*padding: 12px 20px;*/
+  width:200px;
+  height:50px;
   font-size: 18px;
   color: #ffb600;
-  border: 1px solid #ffb600;
+  border: 0px solid #ffb600;
   border-radius: 5px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .SocialLogo {
   position: absolute;

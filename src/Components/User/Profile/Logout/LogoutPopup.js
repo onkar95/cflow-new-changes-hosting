@@ -30,6 +30,21 @@ const styles = (theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
+  mainPaper:{
+    backgroundColor:"#121417",
+    maxWidth:"100%",
+    "&.MuiDialog-paperWidthSm": {
+      backgroundColor:"#121417",
+      maxWidth:"100%"
+    }
+  },
+  "@global":{
+    ".MuiDialog-paperWidthSm": {
+      backgroundColor:"#121417",
+      maxWidth:"100%",
+      overflowX:"hidden"
+    }
+  }
 });
 
 const DialogTitle = withStyles(styles)((props) => {
@@ -71,16 +86,15 @@ export default function CustomizedDialogs({ open, setOpen, handleLogout }) {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const classes=styles
   return (
-    <div >
-      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} >
+    <div>
+      <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open} classes={{paperWidthSm:classes.mainPaper}} paperWidthSm={classes.mainPaper}>
         <DialogTitle onClose={handleClose} style={{ padding: '5px 16px 0px 16px' }}>
-          <img src={Logo} alt="logo" style={{ height: "90px", width: "300px" }} />
         </DialogTitle>
-        <DialogContent style={{ margin: "auto", textAlign: 'center' }}>
-          <img src={Logout} style={{ width: "120px", display: "block", margin: "auto" }} />
-          <p style={{ color: "#FFB600", fontFamily: "Montserrat", fontSize: "35px", fontWeight: "bold", margin: '4px 0px' }}>Sure, you want to logout?</p>
+        <DialogContent style={{ margin: "auto", textAlign: 'center', height:"350px", width:"94.6%" }}>
+          <img src={Logout} style={{ width: "120px", display: "block", margin: "auto", marginTop:"100px" }} />
+          <p style={{ color: "#FFB600", fontFamily: "Montserrat", fontSize: "35px", fontWeight: "bold", margin: '4px 0px' }}>Logout of your account?</p>
           <p style={{ color: "#FFB600", fontSize: '20px', margin: '0px' }}>All your data is saved</p>
         </DialogContent>
         <div className="ButtonContainer">
@@ -92,11 +106,11 @@ export default function CustomizedDialogs({ open, setOpen, handleLogout }) {
             Cancel
           </button>
         </div>
-        <div className="SocialLogo">
+        {/*<div className="SocialLogo">
           <a href="#" ><img src={Fb} /></a>
           <a href="#"><img src={Insta} /></a>
           <a href="#"><img src={Twitter} /></a>
-        </div>
+        </div>*/}
       </Dialog>
     </div>
   );
