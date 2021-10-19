@@ -1,0 +1,334 @@
+import { InputLabel, makeStyles, MenuItem, TextField } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControl from "@material-ui/core/FormControl";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Select from "@material-ui/core/Select";
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import "./Styles.css";
+
+function Sand({ getCart, theme, formData, modalopen, setModalOpen, newRequest, setNewRequest, data, setData, quantity, setQuantity, setOpenSaved, currentUnit, setCurrentUnit }) {
+    const [userId, setUserId] = useState(JSON.parse(localStorage.getItem('profile'))?.data?.id)
+    const history = useHistory()
+    const [low, setLow] = useState(false)
+    const [medium, setMedium] = useState(false)
+    const [high, setHigh] = useState(false)
+
+    const units = ["Cubic Ft", "Metric ton", "Ton", "kilograms"]
+
+    // const [tempQuantity,setTempQuantity]=useState("")
+
+    const notify = (msg) =>
+        toast.error(msg, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+
+    const useStyles = makeStyles((theme) => ({
+        formControl: {
+            //   margin: theme.spacing(1),
+            marginRight: theme.spacing(2),
+            // minWidth: 200,
+
+            backgroundColor: "#08090C",
+            color: "white",
+            height: "100%",
+
+            "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: "1px solid transparent",
+                borderRadius: "5px 5px 0 0",
+                color: "white"
+            }
+        },
+        formControl1: {
+            //   margin: theme.spacing(1),
+            marginRight: theme.spacing(2),
+            minWidth: "9%",
+
+            backgroundColor: "#08090C",
+            color: "white",
+            height: "100%",
+
+            "& .Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: "1px solid transparent",
+                // borderRadius: "5px 5px 0 0",
+                color: "white"
+            }
+        },
+        icon: {
+            fill: "#ffb600"
+        },
+        root: {
+            "& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline": {
+                borderColor: "transparent"
+            }
+        },
+        input1: {
+            color: "white",
+            "& input::placeholder":{color:"#fffafa"},
+        },
+        input: {
+            color: "white",
+            "& input::placeholder":{color:"#fffafa"},
+            "& .MuiInputBase-input": {height:'0.3rem', color:"white"},
+            "&.MuiAutocomplete-listbox": {backgroundColor:"white", color:"black"}
+        },
+        inputtheme:{
+            color: "black",
+            "& input::placeholder":{color:"#000000"},
+            "& .MuiInputBase-input": {height:'0.3rem', color:"#000000"}
+        },
+        inputtheme1:{
+            color: "black",
+            "& input::placeholder":{color:"#000000"},
+            "& .MuiInputBase-input": {color:"#000000"}
+        },
+        overflow: "hidden",
+        dropdownStyle: 
+        {
+          backgroundColor:'white',
+        },
+        "@global":{
+            /*".MuiSelect-selectMenu": {
+               height:"70%",
+               marginTop:"15%"
+            },*/
+            ".MuiSelect-outlined.MuiSelect-outlined":{
+                paddingTop:"20px"
+            }
+        }
+    })
+
+    );
+
+    const handlemodal = () => {
+        if (userId === undefined) {
+            alert('Please Login');
+            history.push('/auth-user')
+        }
+        else {
+            if (!formData?.phone_no || !formData?.first_name) {
+                notify('Both name and phone no have to be compulsory added in Profile -> Personal Details')
+            }
+            else if ((low === true || medium === true || high === true) && quantity > 0 && currentUnit) {
+                setModalOpen(true)
+            }
+            else if (low === false && medium === false && high === false) {
+                notify('Please select something')
+            }
+            else if (quantity <= 0 && !currentUnit) {
+                notify('Select a unit and the quantity should be greater than 0')
+            }
+            else if (!currentUnit) {
+                notify('Select a unit')
+            }
+            else if (quantity <= 0) {
+                notify('The quantity should be greater than 0')
+            }
+            else {
+                notify('Please select something');
+            }
+        }
+
+    }
+    useEffect(() => {
+        if (low) {
+            setData({ type: "low" })
+        }
+        else if (medium) {
+            setData({ type: "medium" })
+        }
+        else if (high) {
+            setData({ type: "high" })
+        }
+
+
+    }, [low, medium, high])
+
+    useEffect(() => {
+        if (low) {
+            setMedium(false)
+            setHigh(false)
+        }
+
+    }, [low])
+    useEffect(() => {
+        if (medium) {
+            setLow(false)
+            setHigh(false)
+        }
+
+    }, [medium])
+    useEffect(() => {
+        if (high) {
+            setMedium(false)
+            setLow(false)
+        }
+
+    }, [high])
+    let quantitywithunit
+    useEffect(() => {
+        quantitywithunit = quantity + " " + currentUnit
+        setNewRequest({ ...newRequest, quantity: quantitywithunit })
+    }, [currentUnit, quantity])
+    const handleCart = async (e) => {
+        e.preventDefault()
+        if (userId === undefined) {
+            alert('Please Login');
+            history.push('/auth-user')
+        }
+        else {
+            if (!formData?.phone_no || !formData?.first_name) {
+                notify('Both name and phone no have to be compulsory added in Profile -> Personal Details')
+            }
+            else if ((low === true || medium === true || high === true) && quantity > 0 && currentUnit) {
+                console.log(typeof quantity, typeof currentUnit)
+                // quantitywithunit=quantity + " " + currentUnit
+                console.log(quantitywithunit, "quantity")
+                // setNewRequest({...newRequest,quantity:quantitywithunit})
+                console.log(newRequest, "request")
+
+
+                await axios.post(`${process.env.REACT_APP_URL}/product/add_to_cart/${userId}`, newRequest)
+                    .then(function (response) {
+
+                        console.log(response, "add")
+                    })
+                setOpenSaved(true)
+                setQuantity("")
+                setCurrentUnit("")
+                setLow(false)
+                setCurrentUnit("")
+                setMedium(false)
+                setHigh(false)
+                getCart()
+            }
+            else if (low === false && medium === false && high === false) {
+                notify('Please select something')
+            }
+            else if (quantity <= 0 && !currentUnit) {
+                notify('Select a unit and the quantity should be greater than 0')
+            }
+            else if (!currentUnit) {
+                notify('Select a unit')
+            }
+            else if (quantity <= 0) {
+                notify('The quantity should be greater than 0')
+            }
+            else {
+                notify('Please select something');
+            }
+        }
+    }
+
+    useEffect(()=>{
+        if(modalopen===false){
+            setQuantity("")
+            setCurrentUnit("")
+            setLow(false)
+            setCurrentUnit("")
+            setMedium(false)
+            setHigh(false)
+        }
+    }, [modalopen])
+
+    const classes = useStyles()
+    return (
+        <div className="selected">
+        <div className="selected-header">Sand</div>
+        <div className="description" style={{marginBottom:'50px'}}>Add sand to your products.</div>
+        <div className="description" style={{marginBottom:'30px'}}>Save sand type</div>
+
+        <div>
+        <div className="checkbox" style={theme?{backgroundColor:"#D8D8D8"}:{}} onClick={()=>setLow(!low)}>
+        <label for="checkbutton" className="checkboxlabel">Low/Coarse</label>
+        <input type="checkbox" className="checkbutton" checked={low===true} onChange={(e)=>setLow(e.target.checked)}></input>
+        </div>
+
+        <div className="checkbox" style={theme?{backgroundColor:"#D8D8D8"}:{}} onClick={()=>setMedium(!medium)}>
+        <label for="checkbutton" className="checkboxlabel">Medium</label>
+        <input type="checkbox" className="checkbutton" checked={medium===true} onChange={(e)=>setMedium(e.target.checked)}></input>
+        </div>
+
+        <div className="checkbox" style={theme?{backgroundColor:"#D8D8D8"}:{}} onClick={()=>setHigh(!high)}>
+        <label for="checkbutton" className="checkboxlabel">High</label>
+        <input type="checkbox" className="checkbutton" checked={high===true} onChange={(e)=>setHigh(e.target.checked)}></input>
+        </div>
+            </div>
+            {(low === true || medium === true || high === true)
+                &&
+
+                <div className="quantity" style={{ marginTop: "2%", width: "100%", height: "120px", display:'flex' }}>
+                <TextField autoComplete="off" id="outlined-basic20" type="number" value={quantity} style={{ backgroundColor: theme?"#D8D8D8":"#08090C", width: "200px", height: "45%", borderRadius: "10px", color: "white" }} onChange={(e) => setQuantity(e.target.value)} name="Quantity" className={`${classes.root} InputField`} InputProps={{ className: theme?classes.inputtheme1:classes.input1 }} placeholder="Quantity" variant="outlined" />
+
+            {/*<select className="units" onChange={(e)=>{setCurrentUnit(e.target.value)}} style={theme?{backgroundColor:"#D8D8D8", color:"black"}:{}}>
+            <option style={theme?{backgroundColor:"white", color:"black"}:{}} disabled="disabled" selected="true">Units</option>
+            {units?.map((value, index)=>(
+                <option style={theme?{backgroundColor:"white", color:"black"}:{}}>{value}</option>
+            ))}
+            </select>*/}
+
+            <FormControl
+            variant='outlined'
+            className={classes.formControl1}
+            InputProps={{ disableOutline: true }}
+            style={{height:"45%", width: "50%", marginLeft:"10px", backgroundColor:"transparent"}}
+            >
+    
+            <Select
+                className={classes.selectEmpty}
+                id='demo-simple-select'
+                inputProps={{ classes: { icon: classes.icon } }}
+                style={{ color: theme?"black":"white", height:"100%", backgroundColor:theme?"#D8D8D8":"black" }}
+                displayEmpty
+                MenuProps={{
+                    anchorOrigin: {
+                      vertical: "bottom",
+                      horizontal: "left"
+                    },
+                    getContentAnchorEl: null,
+                    classes: { paper: theme?classes.dropdownStyle:"" }
+                  }}
+            >
+            <MenuItem disabled style={theme?{color:"black"}:{color:"white"}}>Units</MenuItem>
+                {units?.map((filter, index) => (
+                    <MenuItem
+                        style={{ color: theme?"black":"white" }}
+                        className='filter_itemuser'
+                        onClick={() =>
+                            setCurrentUnit(filter)
+                        }
+                        value={index}
+                    >
+                        {filter}
+                    </MenuItem>
+                ))}
+            </Select>
+            </FormControl>
+                </div>
+            }
+            <div className="cement-bottom-buttons">
+            <Button variant="contained" className="cement-cart-button" onClick={handleCart}>
+                ADD TO CART
+            </Button>
+            <Button variant="contained" className="cement-cart-button1" onClick={handlemodal}>
+                Request
+            </Button>
+        </div>
+            <ToastContainer />
+        </div>
+    )
+}
+
+export default Sand

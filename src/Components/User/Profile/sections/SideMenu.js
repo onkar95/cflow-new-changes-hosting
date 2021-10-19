@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import "./Profile.css"
 
-const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, currentSection, setCurrentSection }
+const SideMenu = ({ editable, theme, profilSectionsYellow, profilSections, currentSection, setCurrentSection }
 ) => {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -23,7 +23,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
         setOpen(true)
     }
     return (
-        <div style={{overflow:"auto",width:"100%"}}>
+        <div style={{ width: "100%" }}>
             {window.innerWidth > 600 ?
                 // <Row >
                 <div className="profile_button">
@@ -100,7 +100,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
                             </div>
                             <div className="profile_button_div"  >
                                 <div className="logout_btn" >
-                                    <button disabled={!editable} onClick={handleLogoutConfirmation} style={theme ? { color: "#ffb600", display: "flex", alignItems: "center" } : { color: "#ffb600", display: "flex", alignItems: "center" }}> <img src={logutIcon} style={{marginRight:"15px"}} alt="" /> Logout</button>
+                                    <button disabled={!editable} onClick={handleLogoutConfirmation} style={theme ? { color: "#ffb600", display: "flex", alignItems: "center" } : { color: "#ffb600", display: "flex", alignItems: "center" }}> <img src={logutIcon} style={window.innerWidth > 800 ? { marginRight: "15px" } : { marginRigth: "3px" }} alt="" /> Logout</button>
                                 </div>
                             </div>
                         </div>
