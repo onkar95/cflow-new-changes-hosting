@@ -7,7 +7,7 @@ const ProfilePercent = ({ height, siteAddress, setProfileComplete, formData, cur
     // console.log(formData?.site)
     console.log(siteAddress)
     useEffect(() => {
-        if (formData != "") {
+        if (formData && formData != "") {
 
             if (formData?.first_name !== "") {
                 temp++;

@@ -135,6 +135,13 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
     //     }
     // }, [name, phone, title, wpp, companyName, email])
 
+    useEffect(() => {
+        if (!editable) {
+            setBtnTxt("Save")
+        } else {
+            setBtnTxt("Edit")
+        }
+    }, [])
     return (
         <>
             {window.innerWidth > 600 ?
@@ -385,7 +392,7 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                         className="disabled_save_butn"
                     // disabled={!name || !wpp || !city || !pin || !state}
                     >
-                        <img src={EditIcon} alt="" style={{ height: "20px", marginRight: "2px" }} />
+                        <img src={btnTxt==="Edit"? EditIcon:""} alt="" style={{ height: "20px", marginRight: "2px" }} />
                         {btnTxt}
                     </div>
                     <ToastContainer />

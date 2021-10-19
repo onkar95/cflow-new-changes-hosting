@@ -176,6 +176,13 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
 
     // }
 
+    useEffect(() => {
+        if (!editable) {
+            setBtnTxt("Save")
+        } else {
+            setBtnTxt("Edit")
+        }
+    }, [])
     const [lat, setLat] = useState(null);
     const [lng, setLng] = useState(null);
     const [status, setStatus] = useState(null);
@@ -440,7 +447,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                         className="disabled_save_butn"
                     // disabled={!name || !wpp || !city || !pin || !state}
                     >
-                        <img src={EditIcon} alt="" style={{ height: "20px", marginRight: "2px" }} />
+                        <img src={btnTxt==="Edit"? EditIcon:""} alt="" style={{ height: "20px", marginRight: "2px" }} />
                         {btnTxt}
                     </div>
 

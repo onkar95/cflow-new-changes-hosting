@@ -43,21 +43,21 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
         setYear(d.getFullYear())
         setdateToday(`${year}-${month}-${date}`)
     }, [currentSection, formData])
-    console.log(dateToday);
+    // console.log(dateToday);
 
-    console.log(pitchedRequests[0].updated_at.slice(0, 4) == year);
-    console.log(pitchedRequests[0].updated_at.slice(5, 7) == month);
-    console.log(pitchedRequests[3].updated_at.slice(8, 10) == date);
-    console.log(year)
-    console.log(month)
-    console.log(date)
-    console.log(pitchedRequests);
-    console.log(pitchedRequests[0].updated_at.slice(0, 10));
-    console.log(dateToday);
+    // console.log(pitchedRequests[0].updated_at.slice(0, 4) == year);
+    // console.log(pitchedRequests[0].updated_at.slice(5, 7) == month);
+    // console.log(pitchedRequests[3].updated_at.slice(8, 10) == date);
+    // console.log(year)
+    // console.log(month)
+    // console.log(date)
+    // console.log(pitchedRequests);
+    // console.log(pitchedRequests[0].updated_at.slice(0, 10));
+    // console.log(dateToday);
 
     useEffect(() => {
         var count = 0;
-        pitchedRequests?.forEach(element => {
+        pitchedRequests && pitchedRequests?.forEach(element => {
             if (element.updated_at.slice(0, 4) == year && element.updated_at.slice(5, 7) == month && element.updated_at.slice(8, 10) == date) {
                 count++
                 console.log(element);
@@ -139,7 +139,7 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
             setCurrentSection(0)
         }
     }
-    // console.log(pitchedRequests)
+    // console.log(pitchedRequests && pitchedRequests)
     return (
         <>
 
@@ -235,7 +235,7 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
                     :
                     <div className="usersActivity_div">
                         <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                            <h1>{todayPitchCount-1}</h1>
+                        <h1>{todayPitchCount>0?todayPitchCount-1:todayPitchCount}</h1>
                             <h5>Total pitch recived today</h5>
                             {todayPitchCount > 0 ?
                                 <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>

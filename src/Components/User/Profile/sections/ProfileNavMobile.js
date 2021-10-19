@@ -162,7 +162,7 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                     :
                     <div className="usersActivity_div">
                     <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                        <h1>{todayPitchCount-1}</h1>
+                        <h1>{todayPitchCount>0?todayPitchCount-1:todayPitchCount}</h1>
                         <h5>Total pitch recived today</h5>
                         {todayPitchCount > 0 ?
                             <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>
