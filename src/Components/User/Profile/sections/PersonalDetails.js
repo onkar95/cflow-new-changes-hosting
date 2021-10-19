@@ -430,7 +430,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                                 placeholder='State'
                                 className={theme === true ? "white_input" : "dark_input"}
                                 id='state'
-                                type='password'
+                                type='text'
                                 onChange={(e) => setState(e.target.value)}
                                 value={state}
                                 disabled={editable}
