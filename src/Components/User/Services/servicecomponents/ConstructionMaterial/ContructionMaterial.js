@@ -1,4 +1,14 @@
-import { Button, Checkbox, Dialog, DialogContent, DialogTitle, FormControlLabel, Popover } from '@material-ui/core'
+import { Button, Checkbox, MenuItem, Dialog, DialogContent, DialogTitle, FormControlLabel, Popover } from '@material-ui/core'
+/*import Dropdown from 'react-multilevel-dropdown';
+import MultiLevelSelect from 'react-multi-level-selector';*/
+/*import ListSubheader from '@mui/material/ListSubheader';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import Collapse from '@mui/material/Collapse';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';*/
 import { makeStyles } from "@material-ui/core/styles"
 import SearchIcon from '@material-ui/icons/Search';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown'
@@ -87,6 +97,7 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
     let fuse=new Fuse(arr, {keys:["name"], threshold:0.3})
 
     const [address, setAddress]=useState()
+    const [selectedAddress, setselectedAddress]=useState("")
     const [option, setOption]=useState("")
     const [search, setSearch]=useState("")
     const [searchResult, setSearchResult]=useState([])
@@ -134,14 +145,15 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
     const [startDate, setStartDate] = useState(new Date());
 
 
-
+    
     const useStyles = makeStyles({
         dialogPaper: {
-            minHeight: '450px',
-            maxHeight: '450px',
+            minHeight: '500px',
+            maxHeight: '500px',
             overflowY:"visible",
-            minWidth: "350px",
-            maxWidth: "350px",
+            overflowX:"visible",
+            minWidth: window.screen.width>550?"500px":"360px",
+            maxWidth: "500px",
             backgroundColor: "#121417",
             padding: "1rem 1.25rem"
         },
@@ -260,17 +272,35 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                 </div>
 
             </DialogTitle>
-            <DialogContent className="DialogClass">
+            <DialogContent className="DialogClass" style={{overflow:"visible"}}>
                 <div className="ModalContainer">
 
 
                     <div className="ModalApplicationHeader">
-                        <Button aria-describedby={id} variant="contained" style={{ backgroundColor: "#08090C", width: "112%", height: "80%", marginBottom: "1rem", borderRadius: "2px" }} onClick={handleClick}>
+                        <Button aria-describedby={id} variant="contained" style={{ backgroundColor: "#08090C", width: "100%", height: "80%", marginBottom: "1rem", borderRadius: "2px" }} onClick={handleClick}>
                             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", width: "100%" }}>
-                                <p style={{ color: "white", textTransform: "none" }}>{check === "" ? "Select Delivery Address" : `site${check + 1}`}</p>
+    {/*<p style={{ color: "white", textTransform: "none" }}>{check === "" ? "Select Delivery Address" : `site${check + 1}:- ${selectedAddress}`}</p>*/}
+    <p style={{ color: "white", textTransform: "none" }}>{check === "" ? "Select Delivery Address" : `${selectedAddress}`}</p>
                                 <ArrowDropDownIcon style={{ color: "#ffb600" }} />
                             </div>
                         </Button>
+                        {/*<Dropdown
+                        title={selectedAddress===""?"Select Delivery Address":selectedAddress}
+                        style={{width:"100%",backgroundColor:"red", color:"blue", margin:"auto"}}
+                      >
+                      {site.map((brand, index)=>(
+                          <Dropdown.Item>
+                            {`site${index + 1}`}
+                            <Dropdown.Submenu position="right">                        
+                                <Dropdown.Item onClick={()=>{setCheck(index);setselectedAddress(brand.door_no+", "+brand.building_name+", "+brand.street+", "+brand.city+", pin-" +  +brand.pin+", "+brand.state+", near "+brand.landmark);;}}>
+                                    {brand.door_no+", "+brand.building_name+", "+brand.street+", "+brand.city+", pin-" +  +brand.pin+", "+brand.state+", near "+brand.landmark}
+                                </Dropdown.Item>
+                            </Dropdown.Submenu>
+                          </Dropdown.Item>))
+                        }
+                    </Dropdown>*/}
+
+
                         <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="materials-form-date" />
                         {/* <p style={{color:"white",textTransform:"capitalize",fontSize:"0.8rem",marginLeft:"2px",marginBottom:"2%",marginTop:"1%"}}>Quantity</p>
                 <TextField id="outlined-basic" placeholder="Enter a value" value={quantity} onChange={(e) => setQuantity(e.target.value)} variant="outlined"  className={classes.root} style={{backgroundColor:"#08090C",width:"95%",boxShadow:"-4px -4px 15px rgba(232, 237, 243, 0.05), 10px 4px 15px rgba(2, 3, 3, 0.2)", borderRadius:"10px" }} InputProps={ {  className: classes.input }} /> */}
@@ -297,6 +327,7 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                 
                 </div> */}
 
+
                         <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
                             <Button variant="contained" style={{ height: "70%", marginTop: "10%", backgroundColor: "#ffb600" }} onClick={handleRequest}>
                                 Request
@@ -316,7 +347,8 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                                 horizontal: 'center',
                             }}
                         >
-                            <div style={{ display: "flex", flexDirection: "column", fontSize: "1rem" }}>
+
+                            <div style={{ display: "flex", flexDirection: "column", fontSize: "1rem", width:"100%" }}>
 
                                 {
                                     (site?.length > 0) ? site?.map((brand, index) => (
@@ -325,21 +357,21 @@ function ContructionMaterial({ cartLength, getCart, theme, formData, setCurrentS
                                                 <Checkbox
 
                                                     checked={check === index ? true : false}
-                                                    onChange={(e) => setCheck(index)}
+                                                    onChange={(e) => {setCheck(index); setselectedAddress(brand.door_no+", "+brand.building_name+", "+brand.street+", "+brand.city+", pin-" +  +brand.pin+", "+brand.state+", near "+brand.landmark);}}
                                                     color="primary"
                                                     icon={<CheckBoxOutlineBlankIcon fontSize="small" style={{ border: "1px solid white" }} />}
                                                     checkedIcon={<CheckBoxIcon fontSize="small" style={{ border: "1px solid white" }} />}
 
                                                 />
                                             }
-                                            /*label={`site ${index + 1}`}*/
+                                            label={`site ${index + 1}`}
                                             label={brand.door_no+", "+brand.building_name+", "+brand.street+", "+brand.city+", pin-" +  +brand.pin+", "+brand.state+", near "+brand.landmark}
                                             style={{
-                                                width: "20rem",
+                                                width: window.screen.width>550?"27rem":"19rem",
                                                 padding: "4%",
-                                                backgroundColor: "#08090C",
+                                                backgroundColor: theme?"white":"#08090C",
                                                 color: "white",
-                                                height: "45%"
+                                                height: "max-content"
                                             }}
                                         />
                                     ))

@@ -68,9 +68,11 @@
   height: 100%;
 }
 .materials-form-date {
-  width: 220%;
+  width: 96%;
   background-color: #09080c;
-  padding: 10% 3%;
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
   margin-bottom: 2rem;
   color: white;
   border-radius: 2px;

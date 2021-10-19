@@ -1,59 +1,58 @@
 .tendors-unavailable-container {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 5rem;
-    background-color: #08090c;
-  }
-  
-  /* .box-svg {
-      width: 100%;
-    } */
-  
-  .tendors-unavailable-header {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 30px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #f5f5f5;
-    margin-top: 3rem;
-  }
-  
-  .tendor-unavailable-desc {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 40px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #8a8a8a;
-    margin-top: 3rem;
-    /* white-space: pre-wrap;
-      word-wrap: break-word; */
-  }
-  
-  .tendor-unavailable-btn {
-    margin-top: 3rem;
-  }
-  
-  .tendor-unavailable-btn-text {
-    /* font-family: Open Sans; */
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.3rem;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-transform: capitalize;
-  
-    color: #ffb600;
-  }
-  
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  background-color: #08090c;
+}
+
+/* .box-svg {
+    width: 100%;
+  } */
+
+.tendors-unavailable-header {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #f5f5f5;
+  margin-top: 3rem;
+}
+
+.tendor-unavailable-desc {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #8a8a8a;
+  margin-top: 3rem;
+  /* white-space: pre-wrap;
+    word-wrap: break-word; */
+}
+
+.tendor-unavailable-btn {
+  margin-top: 3rem;
+}
+
+.tendor-unavailable-btn-text {
+  /* font-family: Open Sans; */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3rem;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+
+  color: #ffb600;
+}

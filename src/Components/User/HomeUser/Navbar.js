@@ -29,7 +29,7 @@ const Navbar = ({
         onClick={() => setCurrentSection(1)}
         key={1}
       >
-        <h4>Services</h4>
+      <h4>Services</h4>
       </div>
       <div
         className='home_user_section'
@@ -37,17 +37,16 @@ const Navbar = ({
         onClick={() => setCurrentSection(2)}
         key={2}
       >
-        <h4>Request</h4>
+      <h4>Request</h4>
       </div>
       <div
         className='home_user_section'
         style={currentSection === 3 ? { color: '#ffb600' } : {}}
         onClick={() => setCurrentSection(3)}
         key={3}
-        
       >
-        <h4 >Estimates</h4>
-        <h5 style={{ backgroundColor: "rgba(255, 182, 0, 0.1)", color: "rgb(255, 182, 0)", padding: "5px" }}>Comming Soon</h5>
+        <h4 style={{marginTop:"70px"}}>Estimates</h4>
+        <h5 style={{backgroundColor:"rgba(255, 182, 0, 0.1)",color:"rgb(255, 182, 0)",padding:"5px"}}>Comming Soon</h5>
       </div>
       <div
         className='home_user_section'
@@ -55,8 +54,8 @@ const Navbar = ({
         onClick={() => setCurrentSection(4)}
         key={4}
       >
-        <h4 >My Tendor</h4>
-        <h5 style={{ backgroundColor: "rgba(255, 182, 0, 0.1)", color: "rgb(255, 182, 0)", padding: "5px",fontWeight:"normal" }}>Comming Soon</h5>
+        <h4 style={{marginTop:"70px"}}>My Tendor</h4>
+        <h5 style={{backgroundColor:"rgba(255, 182, 0, 0.1)",color:"rgb(255, 182, 0)",padding:"5px"}}>Comming Soon</h5>
 
       </div>
 

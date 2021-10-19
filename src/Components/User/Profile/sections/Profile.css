@@ -477,6 +477,19 @@
 
 
 }
+@media(max-width:1180px) {
+ .address{
+  padding: 15px;
+  display: flex;
+  margin: 18px;
+  background-color: #262424;
+  flex-wrap: wrap;
+ }
+ .addressBook {
+  margin: 15px 0px;
+}
+
+}
 
 @media(max-width:1050px) {
   .help_btns div {
@@ -624,6 +637,12 @@
     margin: 25px 12px;
     /* width: 80%; */
 }
+.profile_button {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+
 }
 
 @media(max-width:600px) {
@@ -822,6 +841,14 @@
   width: max-content;
   font-size: 18px;
 }
+.profilePercent {
+    width: 154px;
+    height: 150px;
+    object-fit: contain;
+}
+.logout_btn {
+  margin-left: 0px;
+}
 
 }
 
@@ -871,7 +898,7 @@
  
 }
 
-@media(max-width:326px) {
+@media(max-width:364px) {
 
   .row h1 {
     width: auto;
@@ -888,8 +915,36 @@
   .address {
     padding: 5px;
     display: flex;
-    margin: 4px;
+    margin: 8px 0px;
     background-color: #262424;
     flex-wrap: wrap;
   }
+  .feedback_div {
+    margin-left: 0;
+  }
+}
+@media(max-width:316px) {
+
+
+
+  .addNewAddress_btn div {
+    display: none;
+  }
+
+  .addNewAddress_btn {
+    background-color: transparent !important;
+  }
+  .address {
+    padding: 0px;
+    display: flex;
+    margin: 5px 0px;
+    background-color: #262424;
+    flex-wrap: wrap;
+  }
+ 
+  .address_btn {
+    margin-left: 0px;
+}
+
+
 }

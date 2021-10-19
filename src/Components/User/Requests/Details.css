@@ -279,6 +279,15 @@
   margin-bottom: 5%;
 }
 
+.breadcrumbs {
+  margin-left: 3.5%;
+}
+
+.back {
+  width: fit-content;
+  margin-left: 3.5%;
+}
+
 @media screen and (max-width: 1050px) {
   .cards {
     display: block;
@@ -351,8 +360,13 @@
     margin-bottom: 2%;
   }
 
+  .breadcrumbs {
+    margin-left: 1.5%;
+  }
+
   .back {
     margin-bottom: 0%;
+    margin-left: 1.5%;
   }
 
   .product-detail1 {

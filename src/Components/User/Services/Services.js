@@ -335,7 +335,7 @@ function Services({
                 </Carousel>
             </div> */}
       <div className='service-user-ourservice'>
-        <h2 style={{ fontWeight: '700', marginLeft: 5 }}>Our Services</h2>
+        <h2 style={{ fontWeight: '700', paddingLeft: "2%" }}>Our Services</h2>
       </div>
       <div className='service-user-content'>
         {/* <div className='service-user-sidemenu'>
@@ -413,7 +413,6 @@ function Services({
                       }
                       value={item.index}
                       style={{backgroundColor:theme?"white":"black", color:theme?"black":"white"}}
-
                   >
                       {item.tag}
                   </MenuItem>

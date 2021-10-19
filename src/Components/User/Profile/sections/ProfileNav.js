@@ -42,7 +42,7 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
         setMonth(d.getMonth()+1)
         setYear(d.getFullYear())
         setdateToday(`${year}-${month}-${date}`)
-    }, [currentSection])
+    }, [currentSection,formData])
     console.log(dateToday);
 
     console.log(pitchedRequests[0].updated_at.slice(0, 4)==year);
@@ -65,7 +65,7 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
         });
         setTodayPitchCount(count)
         //  pitchedToday()
-    }, [currentSection]);
+    }, [currentSection,formData]);
 
 
     // const handleLogoutConfirmation = () => {

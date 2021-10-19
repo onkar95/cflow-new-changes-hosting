@@ -258,16 +258,28 @@ width: max-content;
         flex-wrap: wrap;
         width: auto;
     }
+    .profile_navbar {
+        /* display: block; */
+        margin: 5px 0px;
+      }
+      .users_delivery{
+          height: auto;
+      }
+
+      .users_pitch{
+          height: auto;
+      }
 }
 
 @media(max-width:950px) {
     .userInfo {
         font-size: 15px;
+        width: 100%;
     }
 
     .usersActivity,
     .userInfo h1 {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .profilePercent {
@@ -284,7 +296,8 @@ width: max-content;
     }
 
     .usersActivity_div {
-        display: block;
+        display: flex;
+        width: 100%;
     }
 
     .usersActivity h5 {
@@ -292,7 +305,7 @@ width: max-content;
         margin: 0;
     }
     .profile_navbar {
-        display: flex;
+        display: block;
         margin: 5px 0px;
       }
 }
@@ -404,6 +417,11 @@ width: max-content;
         font-size: 20px;
         margin: 0;
     }
+    .profilePercent {
+        width: 154px;
+        height: 150px;
+        object-fit: contain;
+    }
 }
 
 @media(max-width:400px) {
@@ -432,11 +450,41 @@ width: max-content;
     }
 }
 
-@media(max-width:370px) {
+@media(max-width:376px) {
     .row h1 {
         width: max-content;
-        font-size: 14px;
+        font-size: 24px;
 
+    }
+    .logout_btn button {
+        margin-left: -2px;
     }
 
 }
+@media(max-width:316px) {
+
+
+
+    .addNewAddress_btn div {
+      display: none;
+    }
+  
+    .addNewAddress_btn {
+      background-color: transparent !important;
+    }
+    .address {
+      padding: 0px;
+      display: flex;
+      margin: 5px 0px;
+      background-color: #262424;
+      flex-wrap: wrap;
+    }
+    .feedback_div {
+      margin-left: 0;
+    }
+    .address_btn {
+      margin-left: 0px;
+  }
+  
+  
+  }

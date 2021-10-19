@@ -47,7 +47,7 @@ margin-top: 80px;
 }
 
 .login-points-container {
-  width: max-content;
+  width: fit-content;
   text-align: left;
 }
 
@@ -128,12 +128,12 @@ margin-top: 80px;
   font-size: 16px;
   text-align: center;
   color: #8A8A8A;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .textfield-description {
   text-align: start;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .login-textfield {
@@ -390,6 +390,6 @@ input:-webkit-autofill:active  {
 
 @media screen and (max-width:500px) {
   .login-div {
-    width: 100%;
+    width: 90%;
   }
 }

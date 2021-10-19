@@ -576,9 +576,9 @@ function Login({ isSignup, setIsSignup, isUser }) {
                         <div className="login-description textfield-description">Phone no</div>
                         <input className="login-textfield" type="number" name="phone_no" placeholder="Phone no" onChange={handleChange} value={formData.phone_no}></input>
                         <div className="login-description textfield-description" style={{marginBottom:"2%"}}>Password</div>
-                        <TextField onChange={handleChange} name="password" placeholder="Password" type={showpassword ? "text" : "password"} style={{ backgroundColor:"#27292B", width:"93%", paddingLeft:"7%", borderRadius:"4px", fontSize:"16px", margin:"auto"}} className={classes.root} InputProps={{ className: classes.input, disableUnderline: true, endAdornment: <InputAdornment style={{ cursor: 'pointer' }} onClick={handleshow} >{showpassword ? <Visibility /> : <VisibilityOff />}</InputAdornment> }} value={formData.password}></TextField>
+                        <TextField onChange={handleChange} name="password" placeholder="Password" type="password" style={{ backgroundColor:"#27292B", width:"93%", paddingLeft:"7%", borderRadius:"4px", fontSize:"16px", margin:"auto"}} className={classes.root} InputProps={{ className: classes.input, disableUnderline: true }} value={formData.password}></TextField>
                         <div className="login-description textfield-description" style={{marginBottom:"2%"}}>Password</div>
-                        <TextField onChange={handleChange} name="confirmPassword" placeholder="Confirm Password" type={showpassword ? "text" : "password"} style={{ backgroundColor:"#27292B", width:"93%", paddingLeft:"7%", borderRadius:"4px", fontSize:"16px", margin:"auto"}} className={classes.root} InputProps={{ className: classes.input, disableUnderline: true, endAdornment: <InputAdornment style={{ cursor: 'pointer' }} onClick={handleshow} >{showpassword ? <Visibility /> : <VisibilityOff />}</InputAdornment> }} value={formData.confirmPassword}></TextField>
+                        <TextField onChange={handleChange} name="confirmPassword" placeholder="Confirm Password" type="password" style={{ backgroundColor:"#27292B", width:"93%", paddingLeft:"7%", borderRadius:"4px", fontSize:"16px", margin:"auto"}} className={classes.root} InputProps={{ className: classes.input, disableUnderline: true }} value={formData.confirmPassword}></TextField>
                         <button className="login-button" onClick={handleSignup}>Create account</button>
                     </form>
 
@@ -682,4 +682,3 @@ function Login({ isSignup, setIsSignup, isUser }) {
 }
 
 export default Login
-

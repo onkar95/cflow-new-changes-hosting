@@ -23,7 +23,7 @@ const SideMenu = ({editable, theme, profilSectionsYellow, profilSections, curren
         setOpen(true)
     }
     return (
-        <div style={{overflow:"hidden"}}>
+        <div style={{overflow:"auto",width:"100%"}}>
             {window.innerWidth > 600 ?
                 // <Row >
                 <div className="profile_button">

@@ -9,6 +9,7 @@
     width: 25%;
     height: 40% !important;
     text-transform: none !important;
+    box-shadow: none !important;
 }
 .cart-length {
     font-size: xx-large;
