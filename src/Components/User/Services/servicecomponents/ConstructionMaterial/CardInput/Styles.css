@@ -127,7 +127,9 @@ option {
 .description_textarea{
   border-radius: 10px;
   border: none;
-  padding: 10px;
+  width:90%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 @media screen and (max-width: 450px) {
   .toggle-checkbox {

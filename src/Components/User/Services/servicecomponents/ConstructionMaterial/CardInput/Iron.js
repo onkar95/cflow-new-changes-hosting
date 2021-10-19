@@ -200,25 +200,25 @@ function Iron({description,setDescription, getCart, theme, formData, modalopen, 
      <TextField autoComplete="off" id="outlined-basic20" type="number" value={quantity} style={{ backgroundColor: theme?"#D8D8D8":"#08090C", width: "200px", height: "45%", borderRadius: "10px", color: "white" }} onChange={(e) => setQuantity(e.target.value)} name="Quantity" className={`${classes.root} InputField`} InputProps={{ className: theme?classes.inputtheme1:classes.input1 }} placeholder="Quantity" variant="outlined" />
      </div>
  }
-  <div style={{ margin: "5px", marginTop: "20px" }}>
-                {window.innerWidth > 600 ?
-                    <textarea style={theme ? { color: "black", backgroundColor: "#D8D8D8" } : { color: "white", backgroundColor: "#08090c" }}
-                        className="description_textarea" name="" id="" cols="60" rows="10"
-                        placeholder="describe your order here"
-                        // value={description}
-                        onChange={(a) => setDescription(a.target.value)}
-                        
-                    >
-                    </textarea> :
-                    <textarea style={theme ? { color: "black", backgroundColor: "#D8D8D8" } : { color: "white", backgroundColor: "#08090c" }}
-                        className="description_textarea" name="" id="" cols="40" rows="10"
-                        placeholder="describe your order here"
-                        // value={description}
-                        onChange={(a) => setDescription(a.target.value)}
-                    >
-                    </textarea>
-                }
-            </div>
+ <div style={{ margin: "5px", marginTop: "20px" }}>
+ {window.innerWidth > 600 ?
+     <textarea style={theme ? { color: "black", backgroundColor: "#D8D8D8" } : { color: "white", backgroundColor: "#08090c" }}
+         className="description_textarea" name="" id="" cols="60" rows="10"
+         placeholder="describe your order here"
+         // value={description}
+         onChange={(a) => setDescription(a.target.value)}
+         
+     >
+     </textarea> :
+     <textarea style={theme ? { color: "black", backgroundColor: "#D8D8D8" } : { color: "white", backgroundColor: "#08090c" }}
+         className="description_textarea" name="" id="" cols="40" rows="10"
+         placeholder="describe your order here"
+         // value={description}
+         onChange={(a) => setDescription(a.target.value)}
+     >
+     </textarea>
+ }
+</div>
     <div className="cement-bottom-buttons">
         <Button variant="contained" className="cement-cart-button" onClick={handleCart}>
             ADD TO CART

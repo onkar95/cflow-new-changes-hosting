@@ -48,6 +48,46 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
     //     }
 
     // }, [])
+    
+    var d = new Date();
+    const [date, setdate] = useState(0)
+    const [month, setMonth] = useState(0)
+    const [year, setYear] = useState(0)
+    const [todayPitchCount, setTodayPitchCount] = useState(0)
+    const [dateToday, setdateToday] = useState(0)
+
+
+    useEffect(() => {
+        var d = new Date;
+        setdate(d.getDate())
+        setMonth(d.getMonth()+1)
+        setYear(d.getFullYear())
+        setdateToday(`${year}-${month}-${date}`)
+    }, [currentSection,formData])
+    console.log(dateToday);
+
+    console.log(pitchedRequests[0].updated_at.slice(0, 4)==year);
+    console.log(pitchedRequests[0].updated_at.slice(5, 7)==month);
+    console.log(pitchedRequests[3].updated_at.slice(8, 10)==date);
+    console.log(year)
+    console.log(month)
+    console.log(date)
+    console.log(pitchedRequests);
+    console.log(pitchedRequests[0].updated_at.slice(0, 10));
+    console.log(dateToday);
+
+    useEffect(() => {
+        var count = 0;
+        pitchedRequests?.forEach(element => {
+            if (element.updated_at.slice(0, 4) == year && element.updated_at.slice(5, 7) == month && element.updated_at.slice(8, 10) == date) {
+                count++
+                console.log(element);
+            } 
+        });
+        setTodayPitchCount(count)
+        //  pitchedToday()
+    }, [currentSection,formData]);
+
     const completeProfile = () => {
         if (currentSection === 0) {
             setCurrentSection(1)
@@ -121,26 +161,26 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                     </div>
                     :
                     <div className="usersActivity_div">
-                        <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                            <h1>{todaysPtich.length}</h1>
-                            <h5>Total pitch recived today</h5>
-                            {todaysPtich.length > 0 ?
-                                <h5 style={{ color: "green" }}><img src={todaysPtich.length > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>
-                                :
-                                <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
-                            }
-                        </div>
-
-                        <div className="users_delivery" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                            <h1>0</h1>
-                            <h5>Total Delivery</h5>
-                            {todaysPtich.length > 0 ?
-                                <h5 style={{ color: "green" }}><img src={todaysPtich.length > 0 ? SortArrow2 : SortArrow} alt="" />
-                                    <b style={{ color: "green" }}> 0%</b>  this week</h5>
-                                :
-                                <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
-                            }                        </div>
+                    <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
+                        <h1>{todayPitchCount-1}</h1>
+                        <h5>Total pitch recived today</h5>
+                        {todayPitchCount > 0 ?
+                            <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>
+                            :
+                            <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
+                        }
                     </div>
+
+                    <div className="users_delivery" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
+                        <h1>0</h1>
+                        <h5>Total Delivery</h5>
+                        {todayPitchCount > 0 ?
+                            <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" />
+                                <b style={{ color: "green" }}> 0%</b>  this week</h5>
+                            :
+                            <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
+                        }                        </div>
+                </div>
                 }
             </div>
             <LogoutPopup open={open} setOpen={setOpen} handleLogout={handleLogout} />

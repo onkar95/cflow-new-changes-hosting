@@ -39,15 +39,15 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
     useEffect(() => {
         var d = new Date;
         setdate(d.getDate())
-        setMonth(d.getMonth()+1)
+        setMonth(d.getMonth() + 1)
         setYear(d.getFullYear())
         setdateToday(`${year}-${month}-${date}`)
-    }, [currentSection,formData])
+    }, [currentSection, formData])
     console.log(dateToday);
 
-    console.log(pitchedRequests[0].updated_at.slice(0, 4)==year);
-    console.log(pitchedRequests[0].updated_at.slice(5, 7)==month);
-    console.log(pitchedRequests[3].updated_at.slice(8, 10)==date);
+    console.log(pitchedRequests[0].updated_at.slice(0, 4) == year);
+    console.log(pitchedRequests[0].updated_at.slice(5, 7) == month);
+    console.log(pitchedRequests[3].updated_at.slice(8, 10) == date);
     console.log(year)
     console.log(month)
     console.log(date)
@@ -61,11 +61,11 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
             if (element.updated_at.slice(0, 4) == year && element.updated_at.slice(5, 7) == month && element.updated_at.slice(8, 10) == date) {
                 count++
                 console.log(element);
-            } 
+            }
         });
         setTodayPitchCount(count)
         //  pitchedToday()
-    }, [currentSection,formData]);
+    }, [currentSection, formData]);
 
 
     // const handleLogoutConfirmation = () => {
@@ -235,7 +235,7 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
                     :
                     <div className="usersActivity_div">
                         <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                            <h1>{todayPitchCount}</h1>
+                            <h1>{todayPitchCount-1}</h1>
                             <h5>Total pitch recived today</h5>
                             {todayPitchCount > 0 ?
                                 <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>

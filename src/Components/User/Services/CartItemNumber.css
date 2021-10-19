@@ -65,7 +65,7 @@
 @media screen and (max-width: 400px) {
     .cart-navigation {
         height: 80px;
-        width: 95%;
+        width: 90%;
     }
     .my-cart-button {
         margin-top: 6% !important;
@@ -81,6 +81,6 @@
     .my-cart-button {
         margin-top: 5% !important;
         height: 50% !important;
-        width: 35%;
+        width: 32% !important;
     }
 }
