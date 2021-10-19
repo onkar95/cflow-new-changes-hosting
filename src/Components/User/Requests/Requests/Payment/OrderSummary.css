@@ -1,0 +1,94 @@
+.payment_verify {
+  width: 46vw;
+  padding: 25px;
+  background: #191b1e;
+  border-radius: 4px;
+}
+
+.verify_first h2 {
+  font-size: 24px;
+}
+
+.verify_first p {
+  color: #8a8a8a;
+  font-size: 16px;
+  margin: 20px 0;
+}
+
+hr {
+  background: #8a8a8a;
+  height: 1px;
+  margin: 20px 0;
+}
+
+.first_order,
+.second_order {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.first_order label,
+.second_order label {
+  display: flex;
+  flex-direction: column;
+}
+
+.first_order label p:first-child,
+.second_order label p:first-child {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8a8a8a;
+}
+
+.first_order label p:nth-child(2),
+.second_order label p:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.verify_second {
+  display: flex;
+  flex-direction: column;
+}
+
+.verify_second label,
+.verify_third label {
+  display: flex;
+}
+
+.verify_second h6 {
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 0;
+  background: #ffb600;
+  width: 100%;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .payment_verify {
+    width: 90vw;
+    margin: 25px 0;
+  }
+  .verify_first h2 {
+    font-size: 15px;
+  }
+  .verify_second h6 {
+    font-size: 14px;
+  }
+  .verify_first p, .verify_second p, .verify_third p, .second_order label, button {
+    font-size: 13px;
+  }
+}

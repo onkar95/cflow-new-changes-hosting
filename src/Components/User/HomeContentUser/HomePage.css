@@ -7,22 +7,12 @@
 }
 
 .home-banner-header {
-  /* position: relative; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   width: 100%;
   height: 100%;
-
-  /* background-position: center; */
-  /* background-size: cover;  */
-  /* background-image: linear-gradient(
-    180deg,
-    rgba(30, 30, 28, 0.8) 17.05%,
-    rgba(30, 30, 28, 0) 120.28%
-  ); */
-  /* url("../../../Images/home-banner.png"); */
 }
 .home-banner-header img {
   filter: brightness(70%);
@@ -667,7 +657,7 @@
   .customer-satisfy ul li {
     margin-left: -11%;
 
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     /* float: left; */
   }
   .left-side-box img {

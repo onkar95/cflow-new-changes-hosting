@@ -47,7 +47,7 @@ import PopupSaved from "../../Popup/popupsaved/PopupSaved";
 require("dotenv").config();
 
 function HomeUser({ setIsUser, isSignup, setIsSignup }) {
-  const sections = ["Home", "Services", "Requests", "Estimates", "My Tendor comming soon "];
+  const sections = ["Home", "Services", "Requests", "Estimates", "My Tendor  "];
   const sections_logo_white = [
     HomeImage,
     ServicesImage,
@@ -493,17 +493,14 @@ function HomeUser({ setIsUser, isSignup, setIsSignup }) {
             setCurrentSection={setCurrentSectionEstimate}
             setCurrentSectionEstimate={setCurrentSectionEstimate}
             currentSection={currentSectionEstimate}
-            userId={userId}
-            setUserId={setUserId}
+            // userId={userId}
+            // setUserId={setUserId}
           />
         )}
         {currentSection === 4 && (
           <Mytendor
             theme={theme}
             setCurrentSectionRequest={setCurrentSection}
-            // setCurrentSection={setCurrentSectionBlog}
-            // setCurrentSectionBlog={setCurrentSectionBlog}
-            // currentSection={currentSectionBlog}
           />
         )}
         {currentSection === 15 && (
@@ -537,7 +534,6 @@ function HomeUser({ setIsUser, isSignup, setIsSignup }) {
             currentSection={currentSectionProfile}
             setCurrentSection={setCurrentSectionProfile}
             pitchedRequests={pitchedRequests}
-
           />
         )}
         {currentSection === 6 && (
@@ -606,6 +602,7 @@ function HomeUser({ setIsUser, isSignup, setIsSignup }) {
         setTableSwitch={setTableSwitch}
       />
       <Footer
+        theme={theme}
         setCurrentSection={setCurrentSection}
         currentSectionService={currentSectionService}
         setCurrentSectionService={setCurrentSectionService}

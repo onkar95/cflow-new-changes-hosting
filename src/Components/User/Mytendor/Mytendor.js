@@ -11,15 +11,14 @@ const Mytendor = ({ theme }) => {
       style={{ backgroundColor: theme ? "#ffffff" : "" }}
     >
       <div className="box-svg">
-        <img src={Box} alt="box-svg" style={{ width: "100%" }} />
+        <img
+          src={Box}
+          alt="box-svg"
+          style={{ width: "100%", marginTop: "8rem" }}
+        />
       </div>
 
-      <div
-        className="tendors-unavailable-header"
-        style={{ color: theme ? "#08090C" : "" }}
-      >
-        tendor page unavailable
-      </div>
+      <div className="tendors-unavailable-header">tendor page unavailable</div>
 
       <div className="tendor-unavailable-desc">
         {/* Login and complete your profile to view the tendors */}

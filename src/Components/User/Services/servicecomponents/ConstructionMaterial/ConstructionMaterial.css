@@ -214,3 +214,12 @@
     width:100%;
   }
 }
+
+@media screen and (max-width: 400px) {
+  .item-search-div {
+    width: 70%;
+  }
+  .item-search {
+    width:100%;
+  }
+}

@@ -27,7 +27,7 @@ const AboutUs = ({ theme }) => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:3000/user/contact", {
+      await axios.post("http://localhost:8000/user/contact", {
         email: email,
         fullname: fullname,
         subject: subject,
@@ -45,11 +45,9 @@ const AboutUs = ({ theme }) => {
       </div> */}
       <div className="hero-conatiner">
         <img src={Hero} alt="about-us-hero" className="hero-img" />
-        <div className="hero-text-container">
-          <div className="hero-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </div>
-        </div>
+        {/* <div className="hero-text-container"> */}
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        {/* </div> */}
       </div>
       <div
         className="topcard"
@@ -403,37 +401,7 @@ const AboutUs = ({ theme }) => {
               </div>
             </form>
           </div>
-          {/* Button div */}
         </div>
-
-        {/* right side div which has contact info */}
-
-        {/* <div className='contact-section-right-wrapper'>
-          <div className='contact-section-right-img'>
-            <img src={ContactInfoImg} alt='contact-info' />
-            <div className='contact-info'>Contact Information</div>
-            <div className='fill-up'>
-              Fill up the form and our Team will get back to you within 24
-              hours.
-            </div>
-            <div className='contact-credentials-wrapper'>
-              <div className='helpline-wrapper'>
-                <CallIcon />
-                <div className='helpline'>(+40) 772 100 200</div>
-              </div>
-              <div className='email-wrapper'>
-                <MailIcon />
-                <div className='mail'>hello@creative-tim.com</div>
-              </div>
-              <div className='location-wrapper'>
-                <RoomIcon />
-                <div className='location'>
-                  Dyonisie Wolf Bucharest, RO 010458
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         <div className="contact-section-right-wrapper-img">
           <div className="contact-section-right-wrapper">
@@ -461,221 +429,6 @@ const AboutUs = ({ theme }) => {
           </div>
         </div>
       </div>
-
-      {/* <div className='contact-info-wrapper'>
-        <div
-          className='contact-info'
-          style={{
-            backgroundColor: theme ? '#D8D8D8' : '',
-          }}
-        >
-          <Grid container>
-            <Grid item md={6} sm={12}>
-              <Grid container className='form-container'>
-                <Grid item xs={12}>
-                  <div
-                    className='say-hi'
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  >
-                    Say Hi!
-                  </div>
-                </Grid>
-                <Grid item xs={12}>
-                  <div
-                    className='talk'
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  >
-                    We’d like to talk with you.
-                  </div>
-                </Grid>
-                <Grid item xs={12} className='form'>
-                  <TextField
-                    variant='outlined'
-                    margin='normal'
-                    required
-                    fullWidth
-                    id='full-name'
-                    type='text'
-                    placeholder='Full Name'
-                    name='full-name'
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className={classes.textfield}
-                    style={{
-                      backgroundColor: theme ? '#D8D8D8' : '',
-                    }}
-                    InputLabelProps={{
-                      classes: {
-                        root: classes.cssLabel,
-                        focused: classes.cssFocused,
-                        input: classes.input,
-                      },
-                    }}
-                    InputProps={{
-                      classes: {
-                        root: classes.cssOutlinedInput,
-                        focused: classes.cssFocused,
-                        notchedOutline: classes.notchedOutline,
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} className='form'>
-                  <TextField
-                    variant='outlined'
-                    margin='normal'
-                    required
-                    fullWidth
-                    id='fav'
-                    type='text'
-                    placeholder='What you love'
-                    name='fav'
-                    value={fav}
-                    onChange={(e) => setFav(e.target.value)}
-                    className={classes.textfield}
-                    style={{
-                      backgroundColor: theme ? '#D8D8D8' : '',
-                    }}
-                    InputLabelProps={{
-                      classes: {
-                        root: classes.cssLabel,
-                        focused: classes.cssFocused,
-                      },
-                    }}
-                    InputProps={{
-                      classes: {
-                        root: classes.cssOutlinedInput,
-                        focused: classes.cssFocused,
-                        notchedOutline: classes.notchedOutline,
-                      },
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} className='form'>
-                  <TextField
-                    variant='outlined'
-                    margin='normal'
-                    multiline
-                    required
-                    fullWidth
-                    id='description'
-                    type='description'
-                    placeholder='I want to say that...'
-                    name='description'
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    className={classes.textfield}
-                    style={{
-                      backgroundColor: theme ? '#D8D8D8' : '',
-                    }}
-                    InputLabelProps={{
-                      classes: {
-                        root: classes.cssLabel,
-                        focused: classes.cssFocused,
-                      },
-                    }}
-                    InputProps={{
-                      classes: {
-                        root: classes.cssOutlinedInput,
-                        focused: classes.cssFocused,
-                        notchedOutline: classes.notchedOutline,
-                      },
-                    }}
-                  />
-                </Grid>
-                <div className='btn'>
-                  <Button variant='contained' className={classes.button}>
-                    SEND MESSAGE
-                  </Button>
-                </div>
-              </Grid>
-            </Grid>
-            <Grid
-              item
-              md={6}
-              sm={12}
-              style={{
-                padding: '3rem',
-                marginTop: '8rem',
-                backgroundImage:
-                  'url(../../../Images/AboutUs/aboutus-contact.png)',
-              }}
-            >
-              <div className='contact-info-details'>
-                <div
-                  className='contact-info-header'
-                  style={{
-                    color: theme ? 'black' : '',
-                  }}
-                >
-                  Contact Information
-                </div>
-                <div
-                  className='contact-info-instructions'
-                  style={{
-                    color: theme ? 'black' : '',
-                  }}
-                >
-                  Fill up the form and our Team will get back to you within 24
-                  hours.
-                </div>
-                <div className='contact-info-helpline-container'>
-                  <CallIcon
-                    className={classes.icon}
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  />
-                  <div
-                    className='contact-info-helpline'
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  >
-                    (+40) 772 100 200
-                  </div>
-                </div>
-                <div className='contact-info-helpline-container'>
-                  <MailIcon
-                    className={classes.icon}
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  />
-                  <div
-                    className='contact-info-helpline'
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  >
-                    hello@creative-tim.com
-                  </div>
-                </div>
-                <div className='contact-info-helpline-container'>
-                  <RoomIcon
-                    className={classes.icon}
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  />
-                  <div
-                    className='contact-info-helpline'
-                    style={{
-                      color: theme ? 'black' : '',
-                    }}
-                  >
-                    Dyonisie Wolf Bucharest, RO 010458
-                  </div>
-                </div>
-              </div>
-            </Grid>
-          </Grid>
-        </div>
-      </div> */}
     </div>
   );
 };
