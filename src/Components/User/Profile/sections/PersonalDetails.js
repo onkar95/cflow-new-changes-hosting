@@ -332,7 +332,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                                 className="disabled_save_butn"
                                 style={{backgroundColor:"transparent",color:"#ffb600",border:"2px solid #ffb600"}}
                             >
-                                cancle
+                                cancel
                             </div>
                             <ToastContainer />
                         </div>

@@ -1,4 +1,10 @@
+.blog{
+    margin: 10px;
+}
+
 .allBlogs {
+
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     /* flex-direction: column; */

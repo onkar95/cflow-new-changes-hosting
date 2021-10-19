@@ -144,6 +144,7 @@
   .notification_wrapper {
     left: 0%;
     width: 85%;
+    bottom: 1%;
   }
 
 }

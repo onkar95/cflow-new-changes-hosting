@@ -9,7 +9,8 @@ import { useHistory } from "react-router-dom"
 import pendingIcon from "../../../../Images/newProfile/Verification pending.png"
 import completedIcon from "../../../../Images/newProfile/Verification Completed.svg"
 import logutIcon from "../../../../Images/newProfileYellow/Logout.png"
-import LogoutPopup from "../../../Vendor/Profile/sections/Logout/LogoutPopup";
+// import LogoutPopup from "../../Logout/LogoutPopup";
+import LogoutPopup from "../Logout/LogoutPopup";
 import SortArrow from "../../../../Images/Sort arrow.svg"
 import SortArrow2 from "../../../../Images/Sort arrow 2.svg"
 import SortArrow3 from "../../../../Images/Sort arrow 3.svg"

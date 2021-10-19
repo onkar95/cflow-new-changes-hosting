@@ -48,6 +48,7 @@ const Help = ({ theme }) => {
                 display: "inline",
                 margin: "0.5rem 1rem",
                 marginBottom: "1.3rem",
+                marginLeft:"20px"
                 // marginTop: "3rem",
               } : {
                 alignSelf: "center",
