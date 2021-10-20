@@ -14,6 +14,7 @@ import LogoutPopup from "../Logout/LogoutPopup";
 import SortArrow from "../../../../Images/Sort arrow.svg"
 import SortArrow2 from "../../../../Images/Sort arrow 2.svg"
 import SortArrow3 from "../../../../Images/Sort arrow 3.svg"
+import EditIcon from "../../../../Images/newProfileYellow/Edit profile.png"
 
 const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setProfileComplete, profileComplete, currentSection, setCurrentSection, editable, seteditable, feedback, FeedbackYellow, filled }) => {
     const dispatch = useDispatch()
@@ -22,6 +23,8 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
     const [email, setEmail] = useState(formData?.email ? formData?.email : "");
     const [wpp, setWpp] = useState(formData?.whatsapp_no ? formData?.whatsapp_no : "");
     const [name, setName] = useState(formData?.first_name ? formData?.first_name : "");
+
+    const [editProfile, setEditProfile] = useState(false)
 
     console.log(profileComplete)
     // const [filled, setFilled] = useState("")
@@ -49,7 +52,7 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
     //     }
 
     // }, [])
-    
+
     var d = new Date();
     const [date, setdate] = useState(0)
     const [month, setMonth] = useState(0)
@@ -61,15 +64,15 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
     useEffect(() => {
         var d = new Date;
         setdate(d.getDate())
-        setMonth(d.getMonth()+1)
+        setMonth(d.getMonth() + 1)
         setYear(d.getFullYear())
         setdateToday(`${year}-${month}-${date}`)
-    }, [currentSection,formData])
+    }, [currentSection, formData])
     console.log(dateToday);
 
-    console.log(pitchedRequests[0].updated_at.slice(0, 4)==year);
-    console.log(pitchedRequests[0].updated_at.slice(5, 7)==month);
-    console.log(pitchedRequests[3].updated_at.slice(8, 10)==date);
+    console.log(pitchedRequests[0].updated_at.slice(0, 4) == year);
+    console.log(pitchedRequests[0].updated_at.slice(5, 7) == month);
+    console.log(pitchedRequests[3].updated_at.slice(8, 10) == date);
     console.log(year)
     console.log(month)
     console.log(date)
@@ -83,11 +86,11 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
             if (element.updated_at.slice(0, 4) == year && element.updated_at.slice(5, 7) == month && element.updated_at.slice(8, 10) == date) {
                 count++
                 console.log(element);
-            } 
+            }
         });
         setTodayPitchCount(count)
         //  pitchedToday()
-    }, [currentSection,formData]);
+    }, [currentSection, formData]);
 
     const completeProfile = () => {
         if (currentSection === 0) {
@@ -98,6 +101,42 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
             setCurrentSection(0)
         }
     }
+    const handelEditProfile = () => {
+
+
+        if (editProfile === true && editable === true) {
+            seteditable(false)
+            // setCurrentSection(0)
+            setEditProfile(false)
+        } else {
+            seteditable(true)
+            setEditProfile(true)
+        }
+        if ((currentSection != 1 && currentSection != 0) && editProfile === true) {
+            setCurrentSection(0)
+        } else if (currentSection === 0 && editProfile === true) {
+            setCurrentSection(0)
+        } else if (currentSection === 1 && editProfile === true) {
+            setCurrentSection(1)
+        }
+
+    }
+    const handelfeedback = () => {
+        if (currentSection != 3) {
+            setCurrentSection(3)
+        } else {
+            setCurrentSection(0)
+        }
+    }
+
+    useEffect(() => {
+        if (editable === false) {
+            setEditProfile(false)
+        } else {
+            setEditProfile(true)
+        }
+    }, [editable])
+
     return (
         <>
 
@@ -109,7 +148,8 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                             :
                             <ProfilePercent siteAddress={siteAddress} filled={filled} height="140" currentSection={currentSection} formData={formData} setProfileComplete={setProfileComplete} />
 
-                        }                    </div>
+                        }
+                    </div>
                     <div className="row">
                         <div style={{ display: "flex", width: "100%", alignItems: "center" }}>
                             <h1> {name}</h1>
@@ -124,12 +164,52 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                                 </div>}
                         </div>
 
-                        <div className="logout_btn">
+                        {/* <div className="logout_btn">
 
                             <Button onClick={handleLogoutConfirmation} style={{ display: "flex", alignItems: "center", height: "50px" }}> <img src={logutIcon} alt="" /> logout</Button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
+                <div style={{ display: "flex" }}>
+
+                    {
+                        editProfile ?
+                            <div className="address_btn" onClick={handelEditProfile} style={{ display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#ffb600", borderRadius: "5px", padding: "5px", marginLeft: "30px" }} >
+                                <button style={{ display: "flex", alignItems: "center", fontSize: "15px", marginLeft: "5px" }}>
+                                    <img src={EditIcon} alt="" style={{ height: "15px", marginRight: "5px" }} />
+                                    Edit Profile</button>
+                            </div>
+                            :
+                            <div className="address_btn" onClick={handelEditProfile} style={theme ? { display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#fcf1d4", borderRadius: "5px", padding: "5px" } : { display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#fcf1d4", borderRadius: "5px", padding: "5px", backgroundColor: "rgb(43, 38, 23)" }}  >
+                                <button
+                                    style={theme ? { fontSize: "15px", display: "flex", alignItems: "center" } : { fontSize: "15px", display: "flex", alignItems: "center", color: "white" }}>
+                                    Cancel Edit </button>
+                            </div>
+
+                    }
+                    {theme ?
+                        <div className="address_btn" onClick={handelfeedback} style={currentSection === 3 ? { display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#fcf1d4", borderRadius: "5px", padding: "5px", marginLeft: "15px" } : { display: "flex", alignItems: "center", backgroundColor: "#e0ded8", borderRadius: "7px", padding: "5px", marginLeft: "5px" }} >
+                            <img src={currentSection === 3 ? FeedbackYellow : feedback} alt="" style={{ width: "20px", height: "18px", marginTop: "3px", marginLeft: "15px" }} />
+
+                            <button
+                                style={currentSection === 3 ? { color: "#ffb600", fontSize: "15px" } : { display: "flex", alignItems: "center", color: "black", fontSize: "15px" }}>
+                                Feedback
+                            </button>
+
+                        </div>
+                        :
+                        <div className="address_btn" onClick={() => setCurrentSection(3)} style={currentSection === 3 ? { display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#2b2617", borderRadius: "5px", padding: "5px", marginLeft: "15px" } : { display: "flex", alignItems: "center", backgroundColor: "#2d2d2d", borderRadius: "7px", padding: "5px", marginLeft: "15px" }} >
+                            <img src={feedback} style={{ width: "20px", height: "18px", marginTop: "3px", marginLeft: "15px" }} alt="" />
+                            <button
+                                style={{ display: "flex", alignItems: "center", color: "white", fontSize: "15px" }}>
+
+                                Feedback
+                            </button>
+                        </div>
+                    }
+                </div>
+
+
                 <div className="userdetail">
 
                     <div className="info">
@@ -149,7 +229,7 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
 
                 </div>
                 {profileComplete != 100 ?
-                // {/* {true ? */}
+                    // {/* {true ? */}
 
                     <div className="notVerified_user" style={theme ? { backgroundColor: "#ffb600" } : {}}>
                         <div className="notVerified_user_text">
@@ -162,26 +242,26 @@ const ProfileNavMobile = ({ theme, formData, siteAddress, pitchedRequests, setPr
                     </div>
                     :
                     <div className="usersActivity_div">
-                    <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                        <h1>{todayPitchCount>0?todayPitchCount-1:todayPitchCount}</h1>
-                        <h5>Total pitch recived today</h5>
-                        {todayPitchCount > 0 ?
-                            <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>
-                            :
-                            <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
-                        }
-                    </div>
+                        <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
+                            <h1>{todayPitchCount > 0 ? todayPitchCount - 1 : todayPitchCount}</h1>
+                            <h5>Total pitch recived today</h5>
+                            {todayPitchCount > 0 ?
+                                <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>
+                                :
+                                <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
+                            }
+                        </div>
 
-                    <div className="users_delivery" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                        <h1>0</h1>
-                        <h5>Total Delivery</h5>
-                        {todayPitchCount > 0 ?
-                            <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" />
-                                <b style={{ color: "green" }}> 0%</b>  this week</h5>
-                            :
-                            <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
-                        }                        </div>
-                </div>
+                        <div className="users_delivery" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
+                            <h1>0</h1>
+                            <h5>Total Delivery</h5>
+                            {todayPitchCount > 0 ?
+                                <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" />
+                                    <b style={{ color: "green" }}> 0%</b>  this week</h5>
+                                :
+                                <h5 style={theme ? { color: "black" } : { color: "white" }}><b style={theme ? { color: "black" } : { color: "white" }}>NaN</b> </h5>
+                            }                        </div>
+                    </div>
                 }
             </div>
             <LogoutPopup open={open} setOpen={setOpen} handleLogout={handleLogout} />

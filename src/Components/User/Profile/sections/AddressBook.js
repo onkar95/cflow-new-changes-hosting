@@ -57,7 +57,7 @@ const AddressBook = ({ setFilled, filled, theme, setCurrentSection, currentSecti
                 <Column className="inputs_coloum_group" style={window.innerWidth < 600 ? { width: "max-content" } : {}}> Site Address Book</Column>
             </Row>
             {/* <hr style={{ width: "100%" }} /> */}
-            <hr style={{ border: "1px solid #3d3d3d" }} />
+            <hr style={!theme?{border: "0.5px solid #3d3d3d"}:{border: "0.5px solid rgb(178 173 173)"}}/>
 
             <div >
                 <div>
@@ -78,7 +78,7 @@ const AddressBook = ({ setFilled, filled, theme, setCurrentSection, currentSecti
                                             <img src={EditIcon} style={{ width: "20px", height: "22px", padding: "8px",borderRadius:"3px" }} alt="" />
                                         </div>
                                         <div className=" delete_icon" onClick={handleDelete} >
-                                            <img src={DeleteIcon} style={{ margin: "3px", width: "20px", height: "20px", padding: "8px",borderRadius:"3px" }} alt="" />
+                                            <img src={DeleteIcon} style={window.innerWidth>600?{ margin: "3px", width: "20px", height: "20px", padding: "8px",borderRadius:"3px" }:{ margin: "3px", width: "20px", height: "20px", padding: "3px",borderRadius:"3px" }} alt="" />
                                         </div>
                                     </div>
 

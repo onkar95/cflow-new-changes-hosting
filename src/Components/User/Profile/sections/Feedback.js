@@ -67,10 +67,10 @@ const Feedback = ({ theme, formData, setFormData, getUser, handleClickOpen }) =>
     return (
         <Column>
             <Column className="profile_section_heading">
-                <div style={{marginRight:"100px",width:"31%"}}> Rate Us</div>
-                <div> Message Us</div>
+                <div style={{ marginRight: "100px", width: "31%" }}> Rate Us</div>
+                <div style={window.innerWidth<600?{display:"none"}:{}}> Message Us</div>
             </Column>
-            <hr style={{ border: "0.5px solid #3d3d3d", width: "100%" }} />
+            <hr style={!theme ? { border: "0.5px solid #3d3d3d" ,width:"100%"} : { border: "0.5px solid rgb(178 173 173)",width:"100%" }} />
             <div className="feedback_section" >
                 <div className="rating_div">
                     <h3>Rating</h3>
@@ -114,8 +114,16 @@ const Feedback = ({ theme, formData, setFormData, getUser, handleClickOpen }) =>
                     </Row>
                     <h5>rate your expriance here</h5>
                 </div>
-                {window.innerWidth < 600 ? <hr style={{ width: "100%" }} /> : null}
-                <div className="feedback_div" >
+                {/* {window.innerWidth < 600 ? <hr style={theme ? { border: "0.5px solid #3d3d3d",margin:"25px 5px" } : { border: "0.5px solid rgb(178 173 173)",margin:"25px 5px" }} />
+                    : null} */}
+                <div className="feedback_div"
+                style={window.innerWidth<600?{marginLeft:"0",margin:"35px 5px"}:{}}>
+                <div style={window.innerWidth<600?{display:"block"}:{}}> Message Us</div>
+                    {
+                        window.innerWidth < 600 ? <hr style={!theme ? { border: "0.5px solid #3d3d3d", width: "100%",margin:"25px 5px" } : { border: "0.5px solid rgb(178 173 173)", width: "100%" ,margin:"25px 5px" }} />
+                            :
+                            <div></div>
+                        }
                     <h3>Feedback</h3>
                     <div style={{ width: "100%", display: "flex", flexDirection: "column" }}>
                         <Textarea

@@ -82,7 +82,7 @@ const AdressDetails = ({theme, formData, setFormData, getUser, filled, setFilled
                     <Row className="profile_section_heading">
                         <Column className="inputs_coloum_group">Address </Column>
                     </Row>
-                    <hr />
+                    <hr style={!theme?{border: "0.5px solid #3d3d3d", width:"100%"}:{width:"100%",border: "0.5px solid rgb(178 173 173)"}}/>
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
 
@@ -189,7 +189,7 @@ const AdressDetails = ({theme, formData, setFormData, getUser, filled, setFilled
                     <Row>
                         <Column className="inputs_coloum_group">Address </Column>
                     </Row>
-                    <hr />
+                    <hr style={!theme?{border: "0.5px solid #3d3d3d"}:{border: "0.5px solid rgb(178 173 173)"}}/>
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
 

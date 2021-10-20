@@ -42,7 +42,8 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
         setMonth(d.getMonth() + 1)
         setYear(d.getFullYear())
         setdateToday(`${year}-${month}-${date}`)
-    }, [currentSection, formData])
+        setName(formData?.first_name ? formData?.first_name : "")
+    }, [currentSection, formData,editable])
     // console.log(dateToday);
 
     // console.log(pitchedRequests[0].updated_at.slice(0, 4) == year);
@@ -146,7 +147,10 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
             <div className="profile_navbar">
                 <div className="userInfo">
                     <div className="profilePercent">
-                        <ProfilePercent siteAddress={siteAddress} filled={filled} height="170" currentSection={currentSection} formData={formData} setProfileComplete={setProfileComplete} />
+                        {window.innerWidth > 1200 ?
+                            <ProfilePercent siteAddress={siteAddress} filled={filled} height="170" currentSection={currentSection} formData={formData} setProfileComplete={setProfileComplete} />
+                            :
+                            <ProfilePercent siteAddress={siteAddress} filled={filled} height="170" currentSection={currentSection} formData={formData} setProfileComplete={setProfileComplete} />}
                     </div>
                     <div className="userdetail">
                         <div className="row">
@@ -188,9 +192,9 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
                                             Edit Profile</button>
                                     </div>
                                     :
-                                    <div className="address_btn" onClick={handelEditProfile} style={{ display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#fcf1d4", borderRadius: "5px", padding: "5px" }}  >
+                                    <div className="address_btn" onClick={handelEditProfile} style={theme ? { display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#fcf1d4", borderRadius: "5px", padding: "5px" } : { display: "flex", alignItems: "center", border: " orange 3px solid", backgroundColor: "#fcf1d4", borderRadius: "5px", padding: "5px", backgroundColor: "rgb(43, 38, 23)" }}  >
                                         <button
-                                            style={{ fontSize: "15px", display: "flex", alignItems: "center" }}>
+                                            style={theme ? { fontSize: "15px", display: "flex", alignItems: "center" } : { fontSize: "15px", display: "flex", alignItems: "center", color: "white" }}>
                                             Cancel Edit </button>
                                     </div>
 
@@ -233,9 +237,9 @@ const ProfileNav = ({ theme, formData, siteAddress, pitchedRequests, setProfileC
                         </div>
                     </div>
                     :
-                    <div className="usersActivity_div">
-                        <div className="users_pitch" style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
-                        <h1>{todayPitchCount>0?todayPitchCount-1:todayPitchCount}</h1>
+                    <div className="usersActivity_div" >
+                        <div className={window.innerWidth>1200?"users_pitch user_pitch_width":"users_pitch"} style={theme === true ? { backgroundColor: "#fdedc7" } : { backgroundColor: "#2d2d2d" }}>
+                            <h1>{todayPitchCount > 0 ? todayPitchCount - 1 : todayPitchCount}</h1>
                             <h5>Total pitch recived today</h5>
                             {todayPitchCount > 0 ?
                                 <h5 style={{ color: "green" }}><img src={todayPitchCount > 0 ? SortArrow2 : SortArrow} alt="" /><b style={{ color: "green" }}>0%</b>  this week</h5>

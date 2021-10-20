@@ -124,6 +124,8 @@ const EditAddress = ({ theme, setCurrentSection, currentSection, siteNo, site, s
                         Edite site Address
                         {/* </div> */}
                     </Row>
+                    <hr style={!theme ? { border: "0.5px solid #3d3d3d" ,width:"100%"} : { border: "0.5px solid rgb(178 173 173)",width:"100%" }} />
+
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">Building Name</label>
@@ -263,6 +265,7 @@ const EditAddress = ({ theme, setCurrentSection, currentSection, siteNo, site, s
                             Edite site Address
                         </div>
                     </Row>
+                    <hr style={!theme ? { border: "0.5px solid #3d3d3d" ,width:"100%"} : { border: "0.5px solid rgb(178 173 173)",width:"100%" }} />
 
                     <Row className="input_orientation">
                         {/* {!editAddress ?

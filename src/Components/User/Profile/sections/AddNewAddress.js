@@ -93,7 +93,9 @@ const AddNewAddress = ({ setCurrentSection,setSiteAddress, formData, setFormData
                         <div style={{ margin: "10px" }}>
                             Add site Address
                         </div>
+
                     </Row>
+                        <hr style={!theme ? { border: "0.5px solid #3d3d3d" ,width:"100%"} : { border: "0.5px solid rgb(178 173 173)",width:"100%" }} />
                     <Row className="input_orientation">
 
                         <Column className="inputs_coloum"
@@ -237,6 +239,8 @@ const AddNewAddress = ({ setCurrentSection,setSiteAddress, formData, setFormData
                             Add site Address
                         </div>
                     </Row>
+                    <hr style={!theme ? { border: "0.5px solid #3d3d3d" ,width:"100%"} : { border: "0.5px solid rgb(178 173 173)",width:"100%" }} />
+
                     <Row className="input_orientation">
 
                         <Column className="inputs_coloum"

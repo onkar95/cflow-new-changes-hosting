@@ -58,7 +58,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                             getUser()
                             // alert("data saved")
                             setBtnTxt("Edit")
-        seteditable(!editable)
+                            seteditable(!editable)
                             // setSaved("true")
                         })
                     handleClickOpen();
@@ -111,37 +111,37 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
             else {
                 setBtnTxt("Save")
             }
-        
+
         }
     }
     console.log(formData);
     useEffect(() => {
         setFormData({ ...formData, first_name: name, phone_no: phone, city: city, pin: pin, email: email, whatsapp_no: wpp, state: state })
-    //     let temp = 1;
-    //     if (formData.first_name !== "") {
-    //         temp++;
-    //     }
-    //     if (formData.phone !== "") {
-    //         temp++;
-    //     }
-    //     if (formData.city !== "") {
-    //         temp++;
-    //     }
-    //     if (formData.pin !== "") {
-    //         temp++;
-    //     }
-    //     if (formData.email !== "") {
-    //         temp++;
-    //     }
-    //     if (formData.wpp !== "") {
-    //         temp++;
-    //     }
-    //     if (formData.state !== "") {
-    //         temp++;
-    //     } else {
-    //         temp = 0;
-    //     }
-    //     setFilled({ ...filled, personal: temp })
+        //     let temp = 1;
+        //     if (formData.first_name !== "") {
+        //         temp++;
+        //     }
+        //     if (formData.phone !== "") {
+        //         temp++;
+        //     }
+        //     if (formData.city !== "") {
+        //         temp++;
+        //     }
+        //     if (formData.pin !== "") {
+        //         temp++;
+        //     }
+        //     if (formData.email !== "") {
+        //         temp++;
+        //     }
+        //     if (formData.wpp !== "") {
+        //         temp++;
+        //     }
+        //     if (formData.state !== "") {
+        //         temp++;
+        //     } else {
+        //         temp = 0;
+        //     }
+        //     setFilled({ ...filled, personal: temp })
     }, [name, phone, city, pin, email, wpp, state])
 
 
@@ -222,13 +222,13 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
         <>
             {window.innerWidth > 600 ?
                 <div >
-                    <Row className="profile_section_heading" style={{width:"max-content"}} >
-                        <Column style={{width:"max-content"}}>Personal information</Column>
+                    <Row className="profile_section_heading" style={{ width: "max-content" }} >
+                        <Column style={{ width: "max-content" }}>Personal information</Column>
                         {/* <Column className="inputs_coloum_group"></Column>
                         <Column className="inputs_coloum_group"></Column> */}
                     </Row>
 
-                    <hr style={{border: "0.5px solid #3d3d3d"}}/>
+                    <hr style={!theme ? { border: "0.5px solid #3d3d3d" } : { border: "0.5px solid rgb(178 173 173)" }} />
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">Name</label>
@@ -318,11 +318,11 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                         </Column>
                     </Row>
                     {!editable ?
-                        <div style={{display:"flex"}}>
+                        <div style={{ display: "flex" }}>
                             <div
                                 onClick={handleformdata}
                                 className="disabled_save_butn"
-                                style={{  marginRight: "2px" }}
+                                style={{ marginRight: "2px" }}
                             >
                                 {/* <img src={EditIcon} alt="" style={{ height: "20px", marginRight: "2px" }} /> */}
                                 save
@@ -330,7 +330,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                             <div
                                 onClick={() => seteditable(true)}
                                 className="disabled_save_butn"
-                                style={{backgroundColor:"transparent",color:"#ffb600",border:"2px solid #ffb600"}}
+                                style={{ backgroundColor: "transparent", color: "#ffb600", border: "2px solid #ffb600" }}
                             >
                                 cancel
                             </div>
@@ -346,7 +346,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                     <Row>
                         <Column className="inputs_coloum_group">Personal information</Column>
                     </Row>
-                    <hr />
+                    <hr style={!theme ? { border: "0.5px solid #3d3d3d" } : { border: "0.5px solid rgb(178 173 173)" }} />
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">name</label>
@@ -441,7 +441,7 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                         </Column>
                     </Row>
 
-                    <div
+                    {/* <div
                         onClick={handleformdataMobile}
                         // className={`${disabled1 == 0 ? "disabled_save_butn_block  " : "disabled_save_butn "}`}
                         className="disabled_save_butn"
@@ -449,8 +449,30 @@ const PersonalDetails = ({ editable, seteditable, theme, formData, setFormData, 
                     >
                         <img src={btnTxt==="Edit"? EditIcon:""} alt="" style={{ height: "20px", marginRight: "2px" }} />
                         {btnTxt}
-                    </div>
+                    </div> */}
 
+                    {!editable ?
+                        <div style={{ display: "flex" ,width:"20%"}}>
+                            <div
+                                onClick={handleformdata}
+                                className="disabled_save_butn"
+                                style={{ marginRight: "2px" }}
+                            >
+                                {/* <img src={EditIcon} alt="" style={{ height: "20px", marginRight: "2px" }} /> */}
+                                save
+                            </div>
+                            <div
+                                onClick={() => seteditable(true)}
+                                className="disabled_save_butn"
+                                style={{ backgroundColor: "transparent", color: "#ffb600", border: "2px solid #ffb600" }}
+                            >
+                                cancel
+                            </div>
+                            <ToastContainer />
+                        </div>
+                        :
+                        <div></div>
+                    }
                     <ToastContainer />
                 </div>
 

@@ -139,6 +139,7 @@ const ProfilePercent = ({ height, siteAddress, setProfileComplete, formData, cur
                     series={chartOptions.series}
                     type='radialBar'
                     height={270}
+                    width={200}
                 />
                 :
                 <Chart

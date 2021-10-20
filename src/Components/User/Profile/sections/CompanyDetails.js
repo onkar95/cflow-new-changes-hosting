@@ -157,7 +157,7 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                         {/* <Column className="inputs_coloum_group">security</Column> */}
                     </Row>
 
-                    <hr style={{ border: "0.5px solid #3d3d3d" }} />
+                    <hr style={!theme?{border: "0.5px solid #3d3d3d"}:{border: "0.5px solid rgb(178 173 173)"}}/>
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">name</label>
@@ -286,7 +286,7 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                     <Row>
                         <Column className="inputs_coloum_group">company </Column>
                     </Row>
-                    <hr style={{ border: "1px solid #3d3d3d" }} />
+                    <hr style={!theme?{border: "0.5px solid #3d3d3d"}:{border: "0.5px solid rgb(178 173 173)"}}/>
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">name</label>
@@ -326,7 +326,7 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                     <Row>
                         <Column className="inputs_coloum_group">contact information</Column>
                     </Row>
-                    <hr />
+                    <hr style={!theme?{border: "0.5px solid #3d3d3d"}:{border: "0.5px solid rgb(178 173 173)"}}/>
                     <Row className="input_orientation">
                         <Column className="inputs_coloum">
                             <label htmlFor="">Phone no</label>
@@ -386,7 +386,7 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                         </Column>
 
                     </Row>
-                    <div
+                    {/* <div
                         onClick={handleformdataMobile}
                         // className={`${disabled1 == 0 ? "disabled_save_butn_block  " : "disabled_save_butn "}`}
                         className="disabled_save_butn"
@@ -394,7 +394,29 @@ const CompanyDetails = ({ editable, seteditable, theme, formData, setFormData, g
                     >
                         <img src={btnTxt==="Edit"? EditIcon:""} alt="" style={{ height: "20px", marginRight: "2px" }} />
                         {btnTxt}
-                    </div>
+                    </div> */}
+                     {!editable ?
+                        <div style={{ display: "flex" ,width:"20%"}}>
+                            <div
+                                onClick={handleformdata}
+                                className="disabled_save_butn"
+                                style={{ marginRight: "2px" }}
+                            >
+                                {/* <img src={EditIcon} alt="" style={{ height: "20px", marginRight: "2px" }} /> */}
+                                save
+                            </div>
+                            <div
+                                onClick={() => seteditable(true)}
+                                className="disabled_save_butn"
+                                style={{ backgroundColor: "transparent", color: "#ffb600", border: "2px solid #ffb600" }}
+                            >
+                                cancel
+                            </div>
+                            <ToastContainer />
+                        </div>
+                        :
+                        <div></div>
+                    }
                     <ToastContainer />
                 </form>
 
