@@ -115,7 +115,7 @@ const Profile = (
                         {/* {currentSection === 2 && <AddressDetails theme={theme} formData={formData} setFormData={setFormData} getUser={getUser} filled={filled} setFilled={setFilled} handleClickOpen={handleClickOpen} />} */}
                         {currentSection === 3 && <Feedback theme={theme} formData={formData} setFormData={setFormData} getUser={getUser} handleClickOpen={handleClickOpen} />}
                         {currentSection === 4 && <AboutUs />}
-                        {currentSection === 5 && <Help theme={theme} />}
+                        {currentSection === 5 && <Help handleClickOpen={handleClickOpen} theme={theme} formData={formData} setFormData={setFormData} getUser={getUser} />}
                         {currentSection === 7 && <AddressBook filled={filled} setFilled={setFilled} theme={theme} setCurrentSection={setCurrentSection} site={site} setSiteNo={setSiteNo} site={site} siteNo={siteNo} setSite={setSite} getSite={getSite} handleClickOpen={handleClickOpen} />}
                         {currentSection === 8 && <EditAddress editable={editable} seteditable={seteditable} theme={theme} setCurrentSection={setCurrentSection} site={site} siteNo={siteNo} setSite={setSite} getSite={getSite} handleClickOpen={handleClickOpen} />}
                         {currentSection === 9 && <AddNewAddress filled={filled} setFilled={setFilled} theme={theme} setCurrentSection={setCurrentSection} formData={formData} setFormData={setFormData} getUser={getUser} getSite={getSite} handleClickOpen={handleClickOpen} />}
