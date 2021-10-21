@@ -65,7 +65,8 @@ const AddNewAddress = ({ setCurrentSection,setSiteAddress, formData, setFormData
     }, [site])
 
     useEffect(() => {
-        if (!buildingname || !state || !addtitle || !city || !doorno || !landmark || !street || !pin) {
+        // if (!buildingname || !state || !addtitle || !city || !doorno || !landmark || !street || !pin) {
+        if (!buildingname) {
             setDisabled(0);
             
         } else {
@@ -213,10 +214,12 @@ const AddNewAddress = ({ setCurrentSection,setSiteAddress, formData, setFormData
                     </Row>
                     <button
                         onClick={handleformdata}
-                        // className="disiabled_save_butn"
+                        // className="disabled_save_butn"
                         className={`${disabled1 == 0 ? "disabled_save_butn_block  " : "disabled_save_butn "}`}
                         style={disabled1 == 0 ? { backgroundColor: "gray", color: "black" } : { backgroundColor: "#ffb600", color: "black" }}
-                        disabled={!buildingname || !state || !addtitle || !city || !doorno || !landmark || !street || !pin}
+                        // style={ { backgroundColor: "#ffb600", color: "black" }}
+                        // disabled={!buildingname || !state || !addtitle || !city || !doorno || !landmark || !street || !pin}
+                        disabled={!buildingname}
                     >
                         Add new address
                     </button>
@@ -362,7 +365,7 @@ const AddNewAddress = ({ setCurrentSection,setSiteAddress, formData, setFormData
                         // className="disiabled_save_butn"
                         className={`${disabled1 == 0 ? "disabled_save_butn_block  " : "disabled_save_butn "}`}
                         style={disabled1 == 0 ? { backgroundColor: "gray", color: "black", margin: "0", fontSize: "20px" } : { backgroundColor: "#ffb600", color: "black", margin: "0", fontSize: "20px" }}
-                        disabled={!buildingname || !state || !addtitle || !city || !doorno || !landmark || !street || !pin}
+                        // disabled={!buildingname || !state || !addtitle || !city || !doorno || !landmark || !street || !pin}
                     >
                          Add new address
                     </button>
